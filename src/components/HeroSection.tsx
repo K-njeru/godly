@@ -8,17 +8,17 @@ import Image from "next/image"
 const SLIDE_INTERVAL = 15000 // 15 seconds
 const SLIDES = [
   {
-    image: "/public/man-praying.jpg",
+    image: "/pray.jpg",
     title: "Nurturing Faith",
     description: "Developing strong spiritual foundations through Christ-centered education in Kenya",
   },
   {
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/man-reading.avif",
     title: "Building Leaders",
     description: "Empowering the next generation of Christian leaders to make a positive impact",
   },
   {
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/holding-hands.jpg",
     title: "Serving Community",
     description: "Making a lasting difference through compassionate service and mission work",
   },
@@ -44,15 +44,10 @@ export default function HeroSection() {
   }, [autoplay, nextSlide])
 
   return (
-    <section
-      className="relative min-h-[600px] md:min-h-[700px] overflow-hidden"
-      style={{
-        background: "linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 50%, #90CAF9 100%)",
-      }}
-    >
+    <section className="relative min-h-[600px] w-full md:min-h-[700px] bg-white overflow-hidden">
       <div className="flex flex-col md:flex-row h-full">
-        {/* Content Section (Left on large screens) */}
-        <div className="relative z-10 w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center md:order-first order-last">
+        {/* Content Section (Left on large screens, overlay on small screens) */}
+        <div className="relative z-10 w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-center md:bg-gray-100 md:m-4 md:rounded-lg">
           <div className="max-w-xl mx-auto md:mx-0">
             {/* Static Content */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4">Godly Wisdom</h1>
@@ -70,51 +65,28 @@ export default function HeroSection() {
                 </Button>
               </div>
             </div>
-
-            {/* Navigation Arrows */}
-            <div className="flex items-center gap-4 mt-12">
-              <button
-                onClick={() => {
-                  previousSlide()
-                  setAutoplay(false)
-                }}
-                className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
-                aria-label="Previous slide"
-              >
-                <ChevronLeft className="h-6 w-6 text-primary" />
-              </button>
-              <button
-                onClick={() => {
-                  nextSlide()
-                  setAutoplay(false)
-                }}
-                className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
-                aria-label="Next slide"
-              >
-                <ChevronRight className="h-6 w-6 text-primary" />
-              </button>
-            </div>
           </div>
         </div>
 
-        {/* Image Section (Right on large screens) */}
-        <div className="relative w-full md:w-1/2 h-[300px] md:h-full">
+        {/* Image Section (Right on large screens, background on small screens) */}
+        <div className="absolute inset-0 md:static md:w-1/2 h-full">
           <div
             className="absolute inset-0 transition-transform duration-500 ease-in-out flex"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
             {SLIDES.map((slide, index) => (
               <div key={index} className="relative w-full h-full min-w-full">
-                {/* Mobile Gradient Overlay */}
+                {/* Gradient Overlay for small screens */}
                 <div className="absolute inset-0 bg-black/40 md:hidden z-10" />
 
                 {/* Image */}
-                <div className="absolute inset-2 md:inset-4">
+                <div className="absolute inset-0 md:relative md:h-full md:m-4">
                   <Image
                     src={slide.image || "/placeholder.svg"}
                     alt={slide.title}
                     fill
-                    className="object-cover rounded-lg"
+                    className="object-cover object-center md:rounded-lg"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     priority={index === 0}
                   />
                 </div>
@@ -122,8 +94,31 @@ export default function HeroSection() {
             ))}
           </div>
         </div>
+
+        {/* Navigation Arrows */}
+        <div className="absolute bottom-4 left-4 z-20 flex items-center gap-4">
+          <button
+            onClick={() => {
+              previousSlide()
+              setAutoplay(false)
+            }}
+            className="p-2 rounded-full bg-white/80 hover:bg-white transition-colors"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="h-6 w-6 text-gray-900" />
+          </button>
+          <button
+            onClick={() => {
+              nextSlide()
+              setAutoplay(false)
+            }}
+            className="p-2 rounded-full bg-white/80 hover:bg-white transition-colors"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="h-6 w-6 text-gray-900" />
+          </button>
+        </div>
       </div>
     </section>
   )
 }
-
