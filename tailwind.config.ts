@@ -4,7 +4,12 @@ import tailwindcssAnimate from "tailwindcss-animate";
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	darkMode: ["class"],
-	content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}", "*.{js,ts,jsx,tsx,mdx}"],
+	content: [
+		"./src/**/*.{js,ts,jsx,tsx}",
+		"./src/components/**/*.{ts,tsx}",
+		"./app/**/*.{ts,tsx}", 
+		"*.{js,ts,jsx,tsx,mdx}"
+	],
 	theme: {
 	  extend: {
 		colors: {
