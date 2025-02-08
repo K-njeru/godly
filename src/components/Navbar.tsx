@@ -86,7 +86,7 @@ export default function Navbar() {
           {/* Get Started and Dark Mode Toggle */}
           <div className="hidden lg:flex lg:items-center lg:space-x-4">
             <ThemeSwitch />
-            <Link href="#home" className="rounded-md bg-teal-500 px-4 py-2 text-sm font-semibold hover:bg-teal-700">
+            <Link href="#home" className="rounded-md bg-blue-700 px-4 py-2 text-white text-sm font-semibold hover:bg-transparent hover:text-foreground hover:border hover:border-blue-500">
               Get Started
             </Link>
           </div>

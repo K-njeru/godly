@@ -1,9 +1,9 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 const SLIDE_INTERVAL = 15000 // 15 seconds
 const SLIDES = [
@@ -86,19 +86,27 @@ export default function HeroSection() {
                 <p className="text-lg text-white/90 md:text-muted-foreground mb-8">
                   {SLIDES[currentSlide].description}
                 </p>
-                <Button
-                  size="lg"
-                  className="bg-white text-primary hover:bg-white/90 md:bg-primary md:text-white md:hover:bg-primary/90"
-                >
-                  Learn More
-                </Button>
+                <div className="flex flex-row gap-4">
+                  <Link
+                    href="#home"
+                    className="w-[140px] h-[50px] flex items-center justify-center rounded-md bg-blue-700 px-6 py-3 text-md text-white font-bold hover:bg-transparent hover:text-foreground hover:border hover:border-blue-500"
+                  >
+                    Donate
+                  </Link>
+                  <Link
+                    href=""
+                    className="w-[140px] h-[50px] flex items-center justify-center rounded-md bg-foreground text-background text-md font-bold hover:bg-transparent hover:text-foreground hover:border hover:border-blue-500"
+                  >
+                    Learn More
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-       {/* Desktop Images Section */}
-       <div className="hidden md:block relative w-1/2 mt-[100px] mx-6 mb-6 bg-background rounded-lg overflow-hidden">
+        {/* Desktop Images Section */}
+        <div className="hidden md:block relative w-1/2 mt-[100px] mx-6 mb-6 bg-background rounded-lg overflow-hidden">
           <div
             className="absolute inset-0 transition-transform duration-500 ease-in-out flex"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
