@@ -44,7 +44,7 @@ export default function HeroSection() {
   }, [autoplay, nextSlide])
 
   return (
-    <section className="relative w-full min-h-screen bg-white overflow-hidden">
+    <section className="relative w-full min-h-screen bg-background overflow-hidden">
       {/* Mobile Background Images */}
       <div className="md:hidden absolute inset-0">
         <div
@@ -53,7 +53,7 @@ export default function HeroSection() {
         >
           {SLIDES.map((slide, index) => (
             <div key={index} className="relative w-full h-full min-w-full">
-              <div className="absolute inset-0 bg-black/40 z-10" />
+              <div className="absolute inset-0 bg-background/40 z-10" />
               <Image
                 src={slide.image || "/placeholder.svg"}
                 alt={slide.title}
@@ -67,20 +67,20 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="relative flex flex-col md:flex-row min-h-screen">
+      <div className="relative flex md:flex-row min-h-screen">
         {/* Content Section */}
-        <div className="relative z-10 w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center md:bg-gray-100">
+        <div className="relative z-10 w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center md:bg-background">
           <div className="max-w-xl mx-auto md:ml-auto md:mr-0 md:pr-8">
             {/* Static Content */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white md:text-primary mb-4">Godly Wisdom</h1>
-            <p className="text-lg md:text-xl text-white/90 md:text-muted-foreground mb-12">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">Godly Wisdom</h1>
+            <p className="text-lg md:text-xl text-foreground/90 md:text-muted-foreground mb-12">
               Growing in faith, talent, and service through Christ-centered education
             </p>
 
             {/* Dynamic Content */}
             <div className="space-y-6">
               <div className="transition-opacity duration-300">
-                <h2 className="text-3xl md:text-4xl font-bold text-white md:text-foreground mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground md:text-foreground mb-4">
                   {SLIDES[currentSlide].title}
                 </h2>
                 <p className="text-lg text-white/90 md:text-muted-foreground mb-8">
