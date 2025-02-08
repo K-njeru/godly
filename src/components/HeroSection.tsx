@@ -133,10 +133,14 @@ export default function HeroSection() {
               previousSlide()
               setAutoplay(false)
             }}
-            className="p-2 rounded-full bg-white/80 hover:bg-white transition-colors"
+            className="p-2 rounded-full 
+              bg-white/80 dark:text-black
+             md:bg-transparent md:border md:border-blue-500
+             lg:bg-transparent lg:border lg:border-blue-500
+             hover:bg-foreground hover:text-background hover:border-transparent transition-colors"
             aria-label="Previous slide"
           >
-            <ChevronLeft className="h-6 w-6 text-gray-900" />
+            <ChevronLeft className="h-6 w-6 text-gray-900 sm:text-white" />
           </button>
           <button
             onClick={() => {
