@@ -44,23 +44,52 @@ export default function HeroSection() {
   }, [autoplay, nextSlide])
 
   return (
-    <section className="relative min-h-[600px] w-full md:min-h-[700px] bg-white overflow-hidden">
-      <div className="flex flex-col md:flex-row h-full">
-        {/* Content Section (Left on large screens, overlay on small screens) */}
-        <div className="relative z-10 w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-center md:bg-gray-100 md:m-4 md:rounded-lg">
-          <div className="max-w-xl mx-auto md:mx-0">
+    <section className="relative w-full min-h-screen bg-white overflow-hidden">
+      {/* Mobile Background Images */}
+      <div className="md:hidden absolute inset-0">
+        <div
+          className="absolute inset-0 transition-transform duration-500 ease-in-out flex"
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        >
+          {SLIDES.map((slide, index) => (
+            <div key={index} className="relative w-full h-full min-w-full">
+              <div className="absolute inset-0 bg-black/40 z-10" />
+              <Image
+                src={slide.image || "/placeholder.svg"}
+                alt={slide.title}
+                fill
+                className="object-cover"
+                sizes="100vw"
+                priority={index === 0}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="relative flex flex-col md:flex-row min-h-screen">
+        {/* Content Section */}
+        <div className="relative z-10 w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center md:bg-gray-100">
+          <div className="max-w-xl mx-auto md:ml-auto md:mr-0 md:pr-8">
             {/* Static Content */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4">Godly Wisdom</h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white md:text-primary mb-4">Godly Wisdom</h1>
+            <p className="text-lg md:text-xl text-white/90 md:text-muted-foreground mb-12">
               Growing in faith, talent, and service through Christ-centered education
             </p>
 
             {/* Dynamic Content */}
             <div className="space-y-6">
               <div className="transition-opacity duration-300">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{SLIDES[currentSlide].title}</h2>
-                <p className="text-lg text-muted-foreground mb-8">{SLIDES[currentSlide].description}</p>
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                <h2 className="text-3xl md:text-4xl font-bold text-white md:text-foreground mb-4">
+                  {SLIDES[currentSlide].title}
+                </h2>
+                <p className="text-lg text-white/90 md:text-muted-foreground mb-8">
+                  {SLIDES[currentSlide].description}
+                </p>
+                <Button
+                  size="lg"
+                  className="bg-white text-primary hover:bg-white/90 md:bg-primary md:text-white md:hover:bg-primary/90"
+                >
                   Learn More
                 </Button>
               </div>
@@ -68,35 +97,29 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Image Section (Right on large screens, background on small screens) */}
-        <div className="absolute inset-0 md:static md:w-1/2 h-full">
+        {/* Desktop Images Section */}
+        <div className="hidden md:block relative w-1/2">
           <div
             className="absolute inset-0 transition-transform duration-500 ease-in-out flex"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
             {SLIDES.map((slide, index) => (
               <div key={index} className="relative w-full h-full min-w-full">
-                {/* Gradient Overlay for small screens */}
-                <div className="absolute inset-0 bg-black/40 md:hidden z-10" />
-
-                {/* Image */}
-                <div className="absolute inset-0 md:relative md:h-full md:m-4">
-                  <Image
-                    src={slide.image || "/placeholder.svg"}
-                    alt={slide.title}
-                    fill
-                    className="object-cover object-center md:rounded-lg"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    priority={index === 0}
-                  />
-                </div>
+                <Image
+                  src={slide.image || "/placeholder.svg"}
+                  alt={slide.title}
+                  fill
+                  className="object-cover"
+                  sizes="50vw"
+                  priority={index === 0}
+                />
               </div>
             ))}
           </div>
         </div>
 
         {/* Navigation Arrows */}
-        <div className="absolute bottom-4 left-4 z-20 flex items-center gap-4">
+        <div className="absolute bottom-6 left-6 z-20 flex items-center gap-4">
           <button
             onClick={() => {
               previousSlide()
@@ -122,3 +145,4 @@ export default function HeroSection() {
     </section>
   )
 }
+

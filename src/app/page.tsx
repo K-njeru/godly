@@ -1,14 +1,15 @@
-import HeroSection from "@/components/HeroSection";
-import Navbar from "@/components/Navbar";
 
-export default function Home() {
+import Navbar from '@/components/Navbar'
+import HeroSection from "@/components/HeroSection";
+
+
+export default function Page() {
   return (
-    <div >
-    
+    <>
       <Navbar />
       <HeroSection />
-    
       
-    </div>
-  );
+    </>
+  )
 }
+
