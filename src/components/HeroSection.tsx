@@ -97,8 +97,8 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Desktop Images Section */}
-        <div className="hidden md:block relative w-1/2">
+       {/* Desktop Images Section */}
+       <div className="hidden md:block relative w-1/2 mt-[100px] mx-6 mb-6 bg-background rounded-lg overflow-hidden">
           <div
             className="absolute inset-0 transition-transform duration-500 ease-in-out flex"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -109,7 +109,7 @@ export default function HeroSection() {
                   src={slide.image || "/placeholder.svg"}
                   alt={slide.title}
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-lg"
                   sizes="50vw"
                   priority={index === 0}
                 />
@@ -145,4 +145,14 @@ export default function HeroSection() {
     </section>
   )
 }
+
+
+
+
+
+
+
+
+
+
 
