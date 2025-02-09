@@ -134,23 +134,22 @@ export default function HeroSection() {
               setAutoplay(false)
             }}
             className="p-2 rounded-full 
-              bg-white/80 dark:text-black
-             md:bg-transparent md:border md:border-blue-500
-             lg:bg-transparent lg:border lg:border-blue-500
-             hover:bg-foreground hover:text-background hover:border-transparent transition-colors"
+             bg-transparent border border-blue-500
+            hover:border-transparent hover:bg-blue-500 transition-colors"
             aria-label="Previous slide"
           >
-            <ChevronLeft className="h-6 w-6 text-gray-900 sm:text-white" />
+            <ChevronLeft className="h-6 w-6 text-foreground" />
           </button>
           <button
             onClick={() => {
               nextSlide()
               setAutoplay(false)
             }}
-            className="p-2 rounded-full bg-white/80 hover:bg-white transition-colors"
+            className="p-2 rounded-full bg-transparent border border-blue-500
+            hover:border-transparent hover:bg-blue-500 hover:bg-blue-500 transition-colors"
             aria-label="Next slide"
           >
-            <ChevronRight className="h-6 w-6 text-gray-900" />
+            <ChevronRight className="h-6 w-6 text-foreground" />
           </button>
         </div>
       </div>

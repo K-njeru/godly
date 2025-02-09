@@ -12,7 +12,7 @@ const urbanist = Urbanist({
 
 // Metadata remains the same
 export const metadata: Metadata = {
-  title: "Gariflex",
+  title: "Godly Wisdom",
   description: "Rediscover the Joy of the Open Road",
 };
 
