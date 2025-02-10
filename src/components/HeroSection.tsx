@@ -94,7 +94,7 @@ export default function HeroSection() {
                     Donate
                   </Link>
                   <Link
-                    href=""
+                    href="#About"
                     className="w-[140px] h-[50px] flex items-center justify-center rounded-md bg-foreground text-background text-md font-bold hover:bg-transparent hover:text-foreground hover:border hover:border-blue-500"
                   >
                     Learn More
