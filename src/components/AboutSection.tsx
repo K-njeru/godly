@@ -73,7 +73,7 @@ export default function AboutSection() {
                             alt="Students engaged in learning"
                             className="object-cover"
                             fill
-                            src="/bible1.jpg?height=800&width=600"
+                            src="/scriptures.jpg?height=800&width=600"
                             priority
                         />
                     </div>

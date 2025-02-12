@@ -57,7 +57,7 @@ export default function PartnersSection() {
                 alt="Students engaged in learning"
                 className="object-cover"
                 fill
-                src="/bible1.jpg?height=800&width=600"
+                src="/partners.jpg?height=800&width=600"
                 priority
             />
         </div>
