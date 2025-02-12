@@ -45,10 +45,10 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { name: "Home", href: "/dashboard" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "#contact" },
-    { name: "Faqs", href: "/faqs" },
+    { name: "Home", href: "#hero" },
+    { name: "About", href: "#about" },
+    { name: "Partners", href: "#partners" },
+    { name: "Courses", href: "#courses" },
   ]
 
   return (
@@ -87,7 +87,7 @@ export default function Navbar() {
           <div className="hidden lg:flex lg:items-center lg:space-x-4">
             <ThemeSwitch />
             <Link href="#home" className="rounded-md bg-blue-700 px-4 py-2 text-white text-sm font-semibold hover:bg-transparent hover:text-foreground hover:border hover:border-blue-500">
-              Get Started
+              Donate
             </Link>
           </div>
           <button
@@ -117,7 +117,7 @@ export default function Navbar() {
               <Link href="/" className="-m-1.5 p-1.5">
                 <Image className="h-8 w-auto" src="/globe.svg" alt="Gariflex" width={32} height={32} />
               </Link>
-              <span className="ml-2 text-lg font-bold ">Gariflex</span>
+              <span className="ml-2 text-lg font-bold ">Godly Wisdom</span>
               <button
                 type="button"
                 className="-m-2.5 rounded-md p-2.5 text-gray-400 hover:text-gray-200"
@@ -144,7 +144,7 @@ export default function Navbar() {
                 className="inline-flex items-center py-2 px-3 mt-2 text-base font-semibold rounded hover:text-teal-700 hover:bg-muted"
                 href="#home"
               >
-                Get Started <ArrowRight className="h-4 ml-2" />
+                Donate <ArrowRight className="h-4 ml-2" />
               </Link>
             </div>
           </div>

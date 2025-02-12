@@ -110,11 +110,10 @@ export default function PartnersSection() {
               className="
                 inline-flex items-center justify-center gap-2 
                 px-8 py-4 text-lg font-semibold
-                bg-primary text-white rounded-full
-                shadow-lg shadow-primary/25
+                bg-transparent text-foreground rounded-full
+                shadow-lg shadow-foreground/50
                 transform transition-all duration-300
-                hover:shadow-xl hover:shadow-primary/35 hover:-translate-y-1
-                dark:shadow-primary/50 dark:hover:shadow-primary/60
+                hover:shadow-xl hover:shadow-foreground/60 hover:-translate-y-1 hover:bg-blue-500
               "
             >
               Become a Partner
