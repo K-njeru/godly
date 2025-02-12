@@ -5,6 +5,7 @@ import { Footer } from '@/components/footer';
 import AboutSection from '@/components/AboutSection';
 import PartnersSection from '@/components/PartnersSection';
 import CoursesSection from '@/components/CoursesSection';
+import { Banner } from '@/components/Banner';
 
 
 export default function Page() {
@@ -14,6 +15,7 @@ export default function Page() {
       <HeroSection />
       <AboutSection />
       <CoursesSection />
+      <Banner />
       <PartnersSection />
       <Footer />
       
