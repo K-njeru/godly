@@ -80,7 +80,7 @@ export default function PartnersSection() {
                 `}
               >
                 {/* Large Number */}
-                <span className="absolute -top-6 -left-6 text-[120px] font-bold opacity-20 text-white">
+                <span className="absolute -top-6 -left-5 text-[120px] font-bold opacity-20 text-white">
                   {type.number}
                 </span>
 
