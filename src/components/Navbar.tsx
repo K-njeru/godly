@@ -62,9 +62,9 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="-m-1.5 p-1.5">
-              <Image className="h-8 w-auto" src="/globe.svg" alt="Gariflex" width={32} height={32} />
+              <Image className="h-8 w-auto" src="/globe.svg" alt="Godly wisdom" width={32} height={32} />
             </Link>
-            <span className="ml-2 text-lg font-bold">Gariflex</span>
+            <span className="ml-2 text-lg font-bold">Godly wisdom</span>
           </div>
 
           {/* Centered nav items */}
@@ -74,7 +74,7 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   className={`text-base font-medium ${
-                    activeSection === item.href.substring(1) ? "text-teal-500" : "text-foreground hover:text-white"
+                    activeSection === item.href.substring(1) ? "text-blue-500" : "text-foreground hover:text-white"
                   }`}
                 >
                   {item.name}
@@ -115,7 +115,7 @@ export default function Navbar() {
           <div>
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5">
-                <Image className="h-8 w-auto" src="/globe.svg" alt="Gariflex" width={32} height={32} />
+                <Image className="h-8 w-auto" src="/globe.svg" alt="Godly wisdom" width={32} height={32} />
               </Link>
               <span className="ml-2 text-lg font-bold ">Godly Wisdom</span>
               <button
@@ -139,9 +139,9 @@ export default function Navbar() {
                   </Link>
                 ))}
               </div>
-              <hr className="border-teal-300 dark:border-teal-700" />
+              <hr className="border-blue-300 dark:border-blue-700" />
               <Link
-                className="inline-flex items-center py-2 px-3 mt-2 text-base font-semibold rounded hover:text-teal-700 hover:bg-muted"
+                className="inline-flex items-center py-2 px-3 mt-2 text-base font-semibold rounded hover:text-blue-700 hover:bg-muted"
                 href="#home"
               >
                 Donate <ArrowRight className="h-4 ml-2" />
