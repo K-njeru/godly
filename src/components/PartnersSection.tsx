@@ -48,21 +48,8 @@ export default function PartnersSection() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col gap-4 relative mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary relative inline-block">
-            Partnership Opportunities
+            Partners
             {/* Decorative Underline */}
-            <svg
-              className="absolute -bottom-4 left-0 w-full h-4 text-blue-500 dark:text-blue-400"
-              viewBox="0 0 200 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1 8.5C20 3.5 40 11.5 60 8.5C80 5.5 100 3.5 119 8.5C140 11.5 160 3.5 180 8.5C200 11.5 220 5.5 199 8.5"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-              />
-            </svg>
           </h2>
           <p className="max-w-[700px] text-gray-600 dark:text-gray-400 md:text-xl">
             Join us in our mission to transform lives through Christ-centered education. Choose how youd like to
