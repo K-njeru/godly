@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 
 const partnerTypes = [
@@ -41,24 +42,28 @@ const partnerTypes = [
 
 export default function PartnersSection() {
   return (
-    <section
-      className="w-full py-12 md:py-24 bg-white dark:bg-[hsl(220_56%_13%)] transition-colors overflow-hidden"
-      id="Partners"
-    >
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col gap-4 relative mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary relative inline-block">
-            Partners
-            {/* Decorative Underline */}
-          </h2>
-          <p className="max-w-[700px] text-gray-600 dark:text-gray-400 md:text-xl">
-            Join us in our mission to transform lives through Christ-centered education. Choose how youd like to
-            partner with us.
-          </p>
+<section className="w-full py-12 md:py-24 bg-white dark:bg-[hsl(220_56%_13%)] transition-colors" id="Partners">
+<div className="container px-4 md:px-6">
+    <div className="flex flex-col gap-4">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary">Partners</h2>
+        <p className="max-w-[700px] text-gray-600 dark:text-gray-400 md:text-xl">
+        Join us in our mission to transform lives through Christ-centered education. Choose how youd like to
+        partner with us.
+        </p>
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+    <div className="relative aspect-square md:aspect-auto md:h-full rounded-lg overflow-hidden">
+            <Image
+                alt="Students engaged in learning"
+                className="object-cover"
+                fill
+                src="/bible1.jpg?height=800&width=600"
+                priority
+            />
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
-          {partnerTypes.map((type, index) => (
+        <div className="lg:col-span-2 space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {partnerTypes.map((type, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -95,16 +100,8 @@ export default function PartnersSection() {
               </div>
             </motion.div>
           ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className="mt-16 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-block"
-          >
+            </div>
+            <div className="flex justify-center">
             <Link
               href="/partners#become-partner"
               className="
@@ -119,10 +116,11 @@ export default function PartnersSection() {
               Become a Partner
               <ArrowRight className="h-5 w-5" />
             </Link>
-          </motion.div>
+            </div>
         </div>
-      </div>
-    </section>
+    </div>
+</div>
+</section>
   )
 }
 
