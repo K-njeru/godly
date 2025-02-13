@@ -44,7 +44,7 @@ export default function HeroSection() {
   }, [autoplay, nextSlide])
 
   return (
-    <section className="relative w-full min-h-screen bg-background overflow-hidden">
+    <section className="relative w-full min-h-screen bg-background overflow-hidden" id='Hero'>
       {/* Mobile Background Images */}
       <div className="md:hidden absolute inset-0">
         <div

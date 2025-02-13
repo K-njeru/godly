@@ -51,7 +51,7 @@ const practicalBenefits = [
 
 export default function CoursesSection() {
     return (
-        <section className="py-16 md:py-24 bg-gray-50/50 dark:bg-[hsl(220_56%_15%)] transition-colors">
+        <section className="py-16 md:py-24 bg-gray-50/50 dark:bg-[hsl(220_56%_15%)] transition-colors" id='Courses'>
             <div className="container mx-auto px-4 md:px-6 max-w-5xl">
                 <div className="flex flex-col gap-4 text-center mb-12">
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary relative inline-block mx-auto">

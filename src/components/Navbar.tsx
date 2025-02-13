@@ -45,10 +45,10 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { name: "Home", href: "#hero" },
-    { name: "About", href: "#about" },
-    { name: "Partners", href: "#partners" },
-    { name: "Courses", href: "#courses" },
+    { name: "Home", href: "/#hero" },
+    { name: "About", href: "/#About" },
+    { name: "Partners", href: "/#Partners" },
+    { name: "Courses", href: "/#Courses" },
   ]
 
   return (
