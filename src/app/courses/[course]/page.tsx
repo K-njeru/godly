@@ -7,7 +7,7 @@ import { courses } from '../page'; // Explicitly import the `courses` array
 interface Course {
   title: string;
   description: string;
-  teachingMode?: string;
+  teachingMode?: string[];
   moreContent?: string;
   intakes: string[];
   schedule: string;
