@@ -6,6 +6,7 @@ import AboutSection from '@/components/AboutSection';
 import PartnersSection from '@/components/PartnersSection';
 import { Banner } from '@/components/Banner';
 import ProgramsSection from '@/components/ProgramsSection';
+import MessageFromTeam from '@/components/MessageFromTeam';
 
 
 export default function Page() {
@@ -17,6 +18,7 @@ export default function Page() {
       <ProgramsSection />
       <Banner />
       <PartnersSection />
+      <MessageFromTeam />
       <Footer />
       
     </>
