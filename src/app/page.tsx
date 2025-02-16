@@ -4,8 +4,8 @@ import HeroSection from "@/components/HeroSection";
 import { Footer } from '@/components/footer';
 import AboutSection from '@/components/AboutSection';
 import PartnersSection from '@/components/PartnersSection';
-import CoursesSection from '@/components/CoursesSection';
 import { Banner } from '@/components/Banner';
+import ProgramsSection from '@/components/ProgramsSection';
 
 
 export default function Page() {
@@ -14,7 +14,7 @@ export default function Page() {
       <Navbar />
       <HeroSection />
       <AboutSection />
-      <CoursesSection />
+      <ProgramsSection />
       <Banner />
       <PartnersSection />
       <Footer />

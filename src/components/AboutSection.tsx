@@ -1,37 +1,36 @@
 "use client"
 
-import { Shield, GraduationCap, Heart, Users } from "lucide-react"
+import { Leaf, BookOpen, HeartHandshake, HandHeart } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from 'lucide-react'
 
 const values = [
     {
-        icon: Shield,
-        title: "Faith-Based Foundation",
+        icon: HandHeart, // Represents serving others with love
+        title: "Servant Leadership",
         description:
-            "Our Christ-centered approach ensures spiritual growth alongside academic excellence, fostering strong moral values and character development.",
+            "Inspired by Christ's example, we equip believers to lead by serving others with humility and love, reflecting the heart of a true disciple.",
     },
     {
-        icon: GraduationCap,
-        title: "Academic Excellence",
+        icon: HeartHandshake, // Represents compassion and connection
+        title: "Compassion",
         description:
-            "We provide high-quality education that prepares students for success while maintaining a strong spiritual foundation.",
+            "We nurture a culture of compassion, teaching believers to love and care for others as Christ did, bringing hope and healing to a broken world.",
     },
     {
-        icon: Heart,
-        title: "Compassionate Service",
+        icon: Leaf, // Represents humility and growth
+        title: "Humility",
         description:
-            "Students learn to serve others with love and empathy, making a positive impact in their communities through mission work.",
+            "We emphasize the importance of humility, encouraging believers to live with a Christ-like attitude of meekness and dependence on God.",
     },
     {
-        icon: Users,
-        title: "Supportive Community",
+        icon: BookOpen, // Represents truth and integrity
+        title: "Truthfulness",
         description:
-            "Our close-knit community of educators, students, and families creates an environment where everyone grows together in faith.",
+            "We uphold the value of truthfulness, guiding believers to live with integrity and honesty, rooted in the unchanging truth of God's Word.",
     },
-]
-
+];
 export default function AboutSection() {
     return (
         <section className="w-full py-12 md:py-24 bg-white dark:bg-[hsl(220_56%_13%)] transition-colors" id="About">
@@ -39,8 +38,7 @@ export default function AboutSection() {
                 <div className="flex flex-col gap-4">
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary">Our Values</h2>
                     <p className="max-w-[700px] text-gray-600 dark:text-gray-400 md:text-xl">
-                        At Godly Wisdom, we cultivate an environment where faith, learning, and service come together to shape
-                        tomorrows leaders.
+                        Godly Wisdom exists to equip and disciple believers of Jesus Christ in their faith and knowledge of the truth that leads to godliness.
                     </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
