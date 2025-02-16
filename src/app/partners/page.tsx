@@ -2,7 +2,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowRight, DollarSign,HandCoins, Heart, Lightbulb, Globe, BookOpen, SquareCheckBig } from "lucide-react"
+import { ArrowRight, ArrowUpRight, DollarSign, HandCoins, Heart, Lightbulb, Globe, BookOpen, SquareCheckBig } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
@@ -118,7 +118,7 @@ export default function PartnersPage() {
             <Navbar />
             <div className="min-h-screen bg-background transition-colors">
                 {/* Hero Section */}
-                <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+                <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden" id='Partners-hero'>
                     <div className="absolute inset-0">
                         <Image
                             src="/partners.jpg?auto=format&fit=crop&q=80"
@@ -202,15 +202,15 @@ export default function PartnersPage() {
                                                     <PartnerForm partnerType={type.title} />
                                                 </DialogContent>
                                             </Dialog>
-                                            </div>
-                                        
+                                        </div>
+
                                         <div className="flex justify-center w-full">
-                                        {type.id === "financial-partners" && (
-                                            <Button className="w-full m-4 md:w-1/2 flex items-center justify-center rounded-md bg-foreground text-background hover:bg-transparent hover:text-foreground hover:border hover:border-blue-500">
-                                                <HandCoins className="mr-2 h-4 w-4" />
-                                                Donate Now
-                                            </Button>
-                                        )}
+                                            {type.id === "financial-partners" && (
+                                                <Button className="w-full m-4 md:w-1/2 flex items-center justify-center rounded-md bg-foreground text-background hover:bg-transparent hover:text-foreground hover:border hover:border-blue-500">
+                                                    <HandCoins className="mr-2 h-4 w-4" />
+                                                    Donate Now
+                                                </Button>
+                                            )}
                                         </div>
                                     </div>
                                 </motion.div>
@@ -230,7 +230,7 @@ export default function PartnersPage() {
                 ))}
 
                 {/* Testimonials Section */}
-                <section className="py-16 bg-gray-100 dark:bg-gray-800">
+                <section className="py-16">
                     <div className="container mx-auto px-4">
                         <h2 className="text-3xl font-bold text-center mb-12">Partner Testimonials</h2>
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -260,15 +260,19 @@ export default function PartnersPage() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="max-w-3xl mx-auto"
+                            className="max-w-3xl mx-auto "
                         >
-                            <h2 className="text-3xl md:text-4xl font-bold mb-6">Join Our Community of Faith</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold mb-6">Join us as a partner</h2>
                             <p className="text-xl mb-8">
-                                Take the first step towards a transformative journey of faith, learning, and growth.
+                                {`We're looking forward to having you as our partner soon and embarking on this journey of faith, growth, and impact together.`}
                             </p>
-                            <Button variant="outline" size="lg" asChild>
-                                <Link href="/contact">Contact Us</Link>
-                            </Button>
+                            <Link
+                                className="inline-flex px-8 py-3 bg-white text-blue-700 rounded-lg font-semibold hover:bg-transparent hover:text-white hover:border hover:border-blue-500 transition-colors flex items-center"
+                                href="#Partners-hero"
+                            >
+                                Explore Partners <ArrowUpRight className="ml-2" />
+                            </Link>
+
                         </motion.div>
                     </div>
                 </section>
@@ -296,13 +300,13 @@ function PartnerForm({ partnerType }: { partnerType: string }) {
 
 function TestimonialCard({ name, role, quote }: { name: string; role: string; quote: string }) {
     return (
-        <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+        <div className="bg-gray-50 dark:bg-[hsl(220_56%_15%)] rounded-lg border border-gray-200 dark:border-gray-800 transition-colors p-6 rounded-lg shadow-lg">
             <p className="text-lg mb-4">&ldquo;{quote}&rdquo;</p>
             <div className="flex items-center">
                 <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
                 <div>
                     <p className="font-semibold">{name}</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{role}</p>
+                    <p className="text-sm text-blue-700 dark:text-blue-400">{role}</p>
                 </div>
             </div>
         </div>
