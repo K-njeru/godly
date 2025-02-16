@@ -81,7 +81,7 @@ export default function ProgramsSection() {
             Our Programs
           </h2>
           <p className="text-gray-600 dark:text-gray-400 md:text-xl max-w-2xl mx-auto">
-            Transform your spiritual journey with our comprehensive Christian education programs.
+          Godly Wisdom Ministry works with partners to accomplish what God has called us to do through four key programmes
           </p>
         </div>
 
