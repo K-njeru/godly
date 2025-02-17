@@ -1,7 +1,7 @@
 "use client"; // Mark this as a client-side component
 
 import { Calendar, Clock, DollarSign } from "lucide-react";
-import { courses } from '../page'; // Explicitly import the `courses` array
+import { courses } from '../page'; // Ensure this import is correct
 
 // Define the Course interface
 interface Course {
@@ -15,7 +15,13 @@ interface Course {
   cost: string;
 }
 
-const CourseDetailsPage = ({ params }: { params: { course: string } }) => {
+interface CourseDetailsPageProps {
+  params: {
+    course: string;
+  };
+}
+
+const CourseDetailsPage = ({ params }: CourseDetailsPageProps) => {
   const { course } = params; // Access the dynamic route parameter from `params`
 
   // Find the selected course
@@ -47,7 +53,7 @@ const CourseDetailsPage = ({ params }: { params: { course: string } }) => {
               Teaching Mode
             </h3>
             <p className="text-lg text-gray-700 dark:text-gray-300">
-              {selectedCourse.teachingMode || "Online"} {/* Adjust teaching mode if available */}
+              {selectedCourse.teachingMode?.join(", ") || "Online"} {/* Adjust teaching mode if available */}
             </p>
           </div>
 
