@@ -7,6 +7,7 @@ import PartnersSection from '@/components/PartnersSection';
 import { Banner } from '@/components/Banner';
 import ProgramsSection from '@/components/ProgramsSection';
 import MessageFromTeam from '@/components/MessageFromTeam';
+import CompassSection from '@/components/CompassSection';
 
 
 export default function Page() {
@@ -15,6 +16,7 @@ export default function Page() {
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <CompassSection />
       <ProgramsSection />
       <Banner />
       <PartnersSection />
