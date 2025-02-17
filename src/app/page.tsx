@@ -8,6 +8,7 @@ import { Banner } from '@/components/Banner';
 import ProgramsSection from '@/components/ProgramsSection';
 import MessageFromTeam from '@/components/MessageFromTeam';
 import CompassSection from '@/components/CompassSection';
+import ConferenceSection from '@/components/ConferenceSection';
 
 
 export default function Page() {
@@ -20,6 +21,7 @@ export default function Page() {
       <ProgramsSection />
       <Banner />
       <PartnersSection />
+      <ConferenceSection />
       <MessageFromTeam />
       <Footer />
       
