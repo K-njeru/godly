@@ -14,8 +14,8 @@ export function Footer() {
               <div className="h-full w-[10%] bg-blue-500" />
             </div>
             <p className="text-sm leading-relaxed">
-              Gariflex is your trusted vehicle rental service provider. We offer a wide range of vehicles for both
-              personal and business use, ensuring reliable transportation solutions with exceptional customer service.
+            Godly Wisdom Ministry is a Christian discipleship organization based in Nairobi, dedicated to nurturing believers in faith and fruitfulness since 2013. Inspired by
+             Paul Washer’s words, we strive to embody true discipleship—marked by humility, righteousness, mercy, purity, and perseverance.
             </p>
           </div>
 
@@ -29,20 +29,23 @@ export function Footer() {
               <Link href="/" className="text-sm hover:text-blue-400">
                 Home
               </Link>
-              <Link href="/vehicles" className="text-sm hover:text-blue-400">
-                Our Vehicles
+              <Link href="/#About" className="text-sm hover:text-blue-400">
+                About
               </Link>
               <Link href="/services" className="text-sm hover:text-blue-400">
-                Services
+                Partners
               </Link>
               <Link href="/booking" className="text-sm hover:text-blue-400">
-                Book Now
+                Compass
               </Link>
               <Link href="/about" className="text-sm hover:text-blue-400">
-                About Us
+                Conference
               </Link>
               <Link href="/contact" className="text-sm hover:text-blue-400">
-                Contact
+                Programs
+              </Link>
+              <Link href="/contact" className="text-sm hover:text-blue-400">
+                Privacy policy
               </Link>
             </nav>
           </div>
@@ -67,7 +70,7 @@ export function Footer() {
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-blue-400" />
                 <a href="mailto:info@gariflex.com" className="text-sm hover:text-blue-400">
-                  info@gariflex.com
+                  info@godlywisdom.com
                 </a>
               </div>
             </div>
