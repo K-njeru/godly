@@ -67,6 +67,9 @@ module.exports = {
 		  md: "calc(var(--radius) - 2px)",
 		  sm: "calc(var(--radius) - 4px)",
 		},
+		animation: {
+			'spin-slow': 'spin 6s linear infinite', // 6 seconds per rotation
+		  },
 	  },
 	},
 	plugins: [tailwindcssAnimate],

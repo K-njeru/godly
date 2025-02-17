@@ -38,7 +38,7 @@ const values = [
 ];
 export default function AboutSection() {
     return (
-        <section className="w-full py-12 md:py-24 bg-white dark:bg-[hsl(220_56%_13%)] transition-colors" id="About">
+        <section className="w-full py-12 md:py-24 bg-gray-50/50 dark:bg-[hsl(220_56%_15%)] transition-colors" id="About">
             <div className="container px-4 md:px-6">
                 <div className="flex flex-col gap-4">
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary">Our Values</h2>

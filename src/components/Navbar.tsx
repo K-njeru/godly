@@ -45,12 +45,12 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { name: "Home", href: "/#hero" },
+    { name: "Home", href: "/#Hero" },
     { name: "About", href: "/#About" },
-    { name: "Partners", href: "/#Partners" },
     { name: "Compass", href: "/#Compass" },
-    { name: "Conference", href: "/#Conference" },
     { name: "Programs", href: "/#Programs" },
+    { name: "Conference", href: "/#Conference" },
+    { name: "Partners", href: "/#Partners" },
   ]
 
   return (
@@ -76,7 +76,7 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   className={`text-base font-medium ${
-                    activeSection === item.href.substring(1) ? "text-blue-500" : "text-foreground hover:text-white"
+                    activeSection === item.href.substring(1) ? "text-blue-500" : "text-foreground hover:text-blue-700 dark:hover:text-blue-400"
                   }`}
                 >
                   {item.name}
