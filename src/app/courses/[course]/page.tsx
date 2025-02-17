@@ -7,10 +7,11 @@ import { courses } from '../page'; // Explicitly import the `courses` array
 interface Course {
   title: string;
   description: string;
-  teachingMode?: string[];
-  moreContent?: string;
+  teachingMode?: string[]; // Optional, as it might not always be present
+  moreContent?: string; // Optional, as it might not always be present
   intakes: string[];
   schedule: string;
+  duration: string; // Added based on the sample
   cost: string;
 }
 
