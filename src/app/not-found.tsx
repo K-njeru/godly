@@ -34,7 +34,7 @@ const Custom404 = () => {
         transition={{ delay: 0.5, duration: 0.5 }}
         className="text-lg md:text-xl text-gray-600 dark:text-gray-400 text-center mb-8 max-w-2xl"
       >
-        Oops! The page you're looking for is still under construction. We're working hard to bring it to you soon. Stay tuned!
+        Oops! The page you&apos;re looking for is still under construction. We&apos;re working hard to bring it to you soon. Stay tuned!
       </motion.p>
 
       {/* Rocket Animation */}

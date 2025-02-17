@@ -88,7 +88,7 @@ export default function Navbar() {
           {/* Get Started and Dark Mode Toggle */}
           <div className="hidden lg:flex lg:items-center lg:space-x-4">
             <ThemeSwitch />
-            <Link href="#home" className="rounded-md bg-blue-700 px-4 py-2 text-white text-sm font-semibold hover:bg-transparent hover:text-foreground hover:border hover:border-blue-500">
+            <Link href="/Donate" className="rounded-md bg-blue-700 px-4 py-2 text-white text-sm font-semibold hover:bg-transparent hover:text-foreground hover:border hover:border-blue-500">
               Donate
             </Link>
           </div>
@@ -144,7 +144,7 @@ export default function Navbar() {
               <hr className="border-blue-300 dark:border-blue-700" />
               <Link
                 className="inline-flex items-center py-2 px-3 mt-2 text-base font-semibold rounded hover:text-blue-700 hover:bg-muted"
-                href="#home"
+                href="/Donate"
               >
                 Donate <ArrowRight className="h-4 ml-2" />
               </Link>
