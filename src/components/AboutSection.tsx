@@ -4,6 +4,7 @@ import { Leaf, BookOpen, HeartHandshake, HandHeart } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from 'lucide-react'
+import { motion } from 'framer-motion';
 
 const values = [
     {
@@ -11,24 +12,28 @@ const values = [
         title: "Servant Leadership",
         description:
             "Inspired by Christ's example, we equip believers to lead by serving others with humility and love, reflecting the heart of a true disciple.",
+        color: "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400",
     },
     {
         icon: HeartHandshake, // Represents compassion and connection
         title: "Compassion",
         description:
             "We nurture a culture of compassion, teaching believers to love and care for others as Christ did, bringing hope and healing to a broken world.",
+        color: "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400",
     },
     {
         icon: Leaf, // Represents humility and growth
         title: "Humility",
         description:
             "We emphasize the importance of humility, encouraging believers to live with a Christ-like attitude of meekness and dependence on God.",
+        color: "bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400",
     },
     {
         icon: BookOpen, // Represents truth and integrity
         title: "Truthfulness",
         description:
             "We uphold the value of truthfulness, guiding believers to live with integrity and honesty, rooted in the unchanging truth of God's Word.",
+        color: "bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-400",
     },
 ];
 export default function AboutSection() {
@@ -45,16 +50,19 @@ export default function AboutSection() {
                     <div className="lg:col-span-2 space-y-8">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {values.map((item, index) => (
-                                <div
-                                    key={index}
-                                    className="flex flex-col gap-2 p-6 bg-gray-50 dark:bg-[hsl(220_56%_15%)] rounded-lg border border-gray-200 dark:border-gray-800 transition-colors"
-                                >
-                                    <div className="p-2 w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900/30">
-                                        <item.icon className="w-8 h-8 text-primary" />
-                                    </div>
-                                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">{item.title}</h3>
-                                    <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
-                                </div>
+                            <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="group flex flex-col gap-2 p-6 bg-white dark:bg-[hsl(220_56%_17%)] rounded-xl border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:shadow-lg"
+                        >
+                            <div className={`p-2 w-12 h-12 ${item.color} rounded-xl flex items-center justify-center transition-transform group-hover:scale-110 duration-300`}>
+                                <item.icon className="w-8 h-8" />
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">{item.title}</h3>
+                            <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
+                        </motion.div>
                             ))}
                         </div>
                         <div className="flex justify-start">
