@@ -81,7 +81,7 @@ export default function ProgramsSection() {
             Our Programs
           </h2>
           <p className="text-gray-600 dark:text-gray-400 md:text-xl max-w-2xl mx-auto">
-          Godly Wisdom Ministry works with partners to accomplish what God has called us to do through four key programmes
+            Godly Wisdom Ministry works with partners to accomplish what God has called us to do through four key programmes
           </p>
         </div>
 
@@ -107,10 +107,10 @@ export default function ProgramsSection() {
                   <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{program.title}</h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">{program.description}</p>
                 </div>
-                
+
                 <div className="mt-auto pb-2">
                   <Link
-                    href="/courses"
+                    href={`/courses?program=${encodeURIComponent(program.title)}`}
                     className="text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
                   >
                     Explore Courses <ArrowUpRight className="w-4 h-4" />
