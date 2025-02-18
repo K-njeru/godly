@@ -3,7 +3,10 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Book, Users, DollarSign, Clock } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import Navbar from "@/components/Navbar";
+import { Footer } from "@/components/footer";
 
 const programs = [
   {
@@ -29,7 +32,7 @@ const programs = [
   },
 ];
 
-const courses = {
+ const courses = {
   "biblical-teaching": [
     {
       id: "biblical-topical-teaching",
@@ -37,6 +40,19 @@ const courses = {
       description: "In-depth study of specific biblical topics and themes",
       duration: "12 weeks",
       mode: ["online", "physical"],
+      cost: "$499",
+      outcomes: [
+        "Deep understanding of biblical themes and doctrines",
+        "Ability to interpret scripture in context",
+        "Skills in biblical research and study methods",
+        "Application of biblical principles in daily life"
+      ],
+      requirements: [
+        "Basic understanding of Christian faith",
+        "Access to a study Bible",
+        "Commitment to weekly study sessions",
+        "Basic computer literacy for online mode"
+      ]
     },
     {
       id: "speaking-engagements",
@@ -44,6 +60,19 @@ const courses = {
       description: "Training in effective biblical communication and preaching",
       duration: "8 weeks",
       mode: ["physical"],
+      cost: "$399",
+      outcomes: [
+        "Confident public speaking skills",
+        "Effective sermon preparation techniques",
+        "Understanding of different preaching styles",
+        "Practical experience in message delivery"
+      ],
+      requirements: [
+        "Active church involvement",
+        "Basic public speaking experience",
+        "Willingness to practice regularly",
+        "Recording device for feedback sessions"
+      ]
     },
     {
       id: "publishing-christian-books",
@@ -51,6 +80,19 @@ const courses = {
       description: "Learn to write and publish Christian literature",
       duration: "16 weeks",
       mode: ["online"],
+      cost: "$699",
+      outcomes: [
+        "Understanding of Christian publishing industry",
+        "Manuscript preparation skills",
+        "Knowledge of publishing processes",
+        "Marketing strategies for Christian books"
+      ],
+      requirements: [
+        "Strong writing skills",
+        "Basic computer proficiency",
+        "Original manuscript idea",
+        "Dedication to writing practice"
+      ]
     },
     {
       id: "christian-books-distribution",
@@ -58,6 +100,19 @@ const courses = {
       description: "Strategies for Christian literature distribution",
       duration: "4 weeks",
       mode: ["online", "physical"],
+      cost: "$299",
+      outcomes: [
+        "Understanding of book distribution channels",
+        "Sales and marketing techniques",
+        "Inventory management skills",
+        "Customer relationship building"
+      ],
+      requirements: [
+        "Basic business knowledge",
+        "Interest in Christian literature",
+        "Good communication skills",
+        "Basic math skills"
+      ]
     },
   ],
   "economic-empowerment": [
@@ -67,6 +122,19 @@ const courses = {
       description: "Comprehensive business startup guidance and training",
       duration: "12 weeks",
       mode: ["online", "physical"],
+      cost: "$599",
+      outcomes: [
+        "Business plan development skills",
+        "Understanding of market analysis",
+        "Financial planning competency",
+        "Strategic business management"
+      ],
+      requirements: [
+        "Basic computer literacy",
+        "Business idea or concept",
+        "Commitment to learning",
+        "Basic math skills"
+      ]
     },
     {
       id: "financial-literacy",
@@ -74,6 +142,19 @@ const courses = {
       description: "Essential financial management and business scaling strategies",
       duration: "8 weeks",
       mode: ["online"],
+      cost: "$449",
+      outcomes: [
+        "Financial statement analysis",
+        "Budgeting and forecasting skills",
+        "Investment strategy understanding",
+        "Risk management knowledge"
+      ],
+      requirements: [
+        "Basic accounting knowledge",
+        "Access to spreadsheet software",
+        "Business experience",
+        "Internet connectivity"
+      ]
     },
     {
       id: "business-incubation",
@@ -81,6 +162,19 @@ const courses = {
       description: "Mentorship and networking opportunities for entrepreneurs",
       duration: "16 weeks",
       mode: ["physical"],
+      cost: "$799",
+      outcomes: [
+        "Mentorship relationships",
+        "Business network development",
+        "Access to resources and support",
+        "Growth strategy implementation"
+      ],
+      requirements: [
+        "Existing business or solid plan",
+        "Commitment to networking",
+        "Regular attendance",
+        "Open to feedback and guidance"
+      ]
     },
     {
       id: "agribusiness",
@@ -88,6 +182,19 @@ const courses = {
       description: "Agricultural business development and management",
       duration: "12 weeks",
       mode: ["physical"],
+      cost: "$549",
+      outcomes: [
+        "Agricultural business planning",
+        "Farm management skills",
+        "Market analysis abilities",
+        "Supply chain understanding"
+      ],
+      requirements: [
+        "Interest in agriculture",
+        "Access to farming resources",
+        "Physical capability",
+        "Basic business knowledge"
+      ]
     },
     {
       id: "income-generating-activities",
@@ -95,6 +202,19 @@ const courses = {
       description: "Practical strategies for sustainable income generation",
       duration: "6 weeks",
       mode: ["online", "physical"],
+      cost: "$349",
+      outcomes: [
+        "Income diversification strategies",
+        "Small business management",
+        "Market opportunity identification",
+        "Resource optimization skills"
+      ],
+      requirements: [
+        "Entrepreneurial mindset",
+        "Time for practical activities",
+        "Basic business understanding",
+        "Willingness to start small"
+      ]
     },
   ],
   "discipleship": [
@@ -104,6 +224,19 @@ const courses = {
       description: "Group-based biblical studies for various demographics",
       duration: "Ongoing",
       mode: ["online", "physical"],
+      cost: "$199",
+      outcomes: [
+        "Deep scripture understanding",
+        "Community building skills",
+        "Leadership development",
+        "Spiritual growth practices"
+      ],
+      requirements: [
+        "Personal Bible",
+        "Commitment to group meetings",
+        "Willingness to participate",
+        "Open to spiritual growth"
+      ]
     },
     {
       id: "second-chance",
@@ -111,6 +244,19 @@ const courses = {
       description: "Restoration and renewal through biblical principles",
       duration: "12 weeks",
       mode: ["physical"],
+      cost: "$299",
+      outcomes: [
+        "Personal healing and growth",
+        "Biblical restoration principles",
+        "Life skills development",
+        "Community support network"
+      ],
+      requirements: [
+        "Commitment to change",
+        "Regular attendance",
+        "Openness to counseling",
+        "Support system participation"
+      ]
     },
     {
       id: "consistent-bible-reading",
@@ -118,6 +264,19 @@ const courses = {
       description: "Developing healthy Bible reading habits",
       duration: "8 weeks",
       mode: ["online"],
+      cost: "$149",
+      outcomes: [
+        "Bible reading discipline",
+        "Scripture meditation skills",
+        "Personal devotion habits",
+        "Biblical application methods"
+      ],
+      requirements: [
+        "Personal Bible",
+        "Daily time commitment",
+        "Reading comprehension",
+        "Digital device access"
+      ]
     },
     {
       id: "generosity-discipleship",
@@ -125,19 +284,51 @@ const courses = {
       description: "Understanding and practicing biblical generosity",
       duration: "6 weeks",
       mode: ["online", "physical"],
+      cost: "$249",
+      outcomes: [
+        "Biblical stewardship principles",
+        "Generous living practices",
+        "Financial management skills",
+        "Kingdom impact understanding"
+      ],
+      requirements: [
+        "Open heart for giving",
+        "Basic financial stability",
+        "Willingness to serve",
+        "Community involvement"
+      ]
     },
   ],
 };
 
 export default function CoursesPage() {
-  const [selectedProgram, setSelectedProgram] = useState(programs[0].id);
+  const searchParams = useSearchParams();
+  const programFromUrl = searchParams.get("program");
+  
+  // Find the program ID based on the program name from URL
+  const getProgramId = (programName: string | null) => {
+    if (!programName) return programs[0].id;
+    const program = programs.find(p => 
+      p.title.toLowerCase() === programName.toLowerCase()
+    );
+    return program ? program.id : programs[0].id;
+  };
+
+  const [selectedProgram, setSelectedProgram] = useState(getProgramId(programFromUrl));
+
+  // Update selected program when URL changes
+  useEffect(() => {
+    setSelectedProgram(getProgramId(programFromUrl));
+  }, [programFromUrl]);
 
   return (
+    <>
+    <Navbar />
     <section className="py-16 md:py-24 bg-gray-50/50 dark:bg-[hsl(220_56%_15%)] transition-colors">
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
         {/* Page Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary mb-6">
+          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary">
             Our Programs & Courses
           </h1>
           <p className="text-gray-600 dark:text-gray-400 md:text-xl max-w-2xl mx-auto">
@@ -197,6 +388,8 @@ export default function CoursesPage() {
                 <span>{course.duration}</span>
                 <span className="mx-2">•</span>
                 <span className="capitalize">{course.mode.join(" / ")}</span>
+                <span className="mx-2">•</span>
+                <span className="font-semibold text-blue-600 dark:text-blue-400">{course.cost}</span>
               </div>
 
               <Link
@@ -211,6 +404,8 @@ export default function CoursesPage() {
         </div>
       </div>
     </section>
+    <Footer />
+    </>
   );
 }
 

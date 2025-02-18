@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowLeft, Calendar, Clock, User, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, Clock, DollarSign, User, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState } from "react";
@@ -33,28 +33,6 @@ export default function CourseDetailsPage() {
       </div>
     );
   }
-
-  // Additional course details (you can expand this based on your needs)
-  const courseDetails = {
-    outcomes: [
-      "Deep understanding of the subject matter",
-      "Practical application skills",
-      "Spiritual growth and development",
-      "Community engagement opportunities",
-    ],
-    requirements: [
-      "Basic understanding of Christian faith",
-      "Commitment to learning and growth",
-      "Access to required materials",
-    ],
-    schedule: {
-      nextIntake: "January 2024",
-      sessions: [
-        { day: "Tuesday", time: "7:00 PM - 9:00 PM" },
-        { day: "Thursday", time: "7:00 PM - 9:00 PM" },
-      ],
-    },
-  };
 
   return (
     <section className="py-16 md:py-24 bg-gray-50/50 dark:bg-[hsl(220_56%_15%)] transition-colors">
@@ -91,6 +69,10 @@ export default function CourseDetailsPage() {
                 {course.mode.join(" / ")}
               </span>
             </div>
+            <div className="flex items-center gap-2">
+              <DollarSign className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+              <span className="text-gray-700 dark:text-gray-300">{course.cost}</span>
+            </div>
           </div>
         </motion.div>
 
@@ -109,7 +91,7 @@ export default function CourseDetailsPage() {
                 Learning Outcomes
               </h2>
               <ul className="space-y-3">
-                {courseDetails.outcomes.map((outcome, index) => (
+                {course.outcomes.map((outcome, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-500 mt-1" />
                     <span className="text-gray-700 dark:text-gray-300">{outcome}</span>
@@ -129,7 +111,7 @@ export default function CourseDetailsPage() {
                 Requirements
               </h2>
               <ul className="space-y-3">
-                {courseDetails.requirements.map((requirement, index) => (
+                {course.requirements.map((requirement, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-blue-500 mt-1" />
                     <span className="text-gray-700 dark:text-gray-300">{requirement}</span>
@@ -149,20 +131,27 @@ export default function CourseDetailsPage() {
             {/* Schedule Card */}
             <div className="bg-white dark:bg-[hsl(220_56%_17%)] rounded-xl p-6 shadow-lg">
               <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-                Schedule
+                Mode of Study
               </h2>
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <span className="text-gray-700 dark:text-gray-300">
-                    Next Intake: {courseDetails.schedule.nextIntake}
+                  <User className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-700 dark:text-gray-300 capitalize">
+                    Available in: {course.mode.join(" and ")}
                   </span>
                 </div>
-                {courseDetails.schedule.sessions.map((session, index) => (
-                  <div key={index} className="text-gray-700 dark:text-gray-300">
-                    {session.day}: {session.time}
-                  </div>
-                ))}
+                <div className="flex items-center gap-2">
+                  <Clock className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-700 dark:text-gray-300">
+                    Duration: {course.duration}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <DollarSign className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-700 dark:text-gray-300">
+                    Cost: {course.cost}
+                  </span>
+                </div>
               </div>
             </div>
 
@@ -215,6 +204,12 @@ export default function CourseDetailsPage() {
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-[hsl(220_56%_20%)] dark:text-white"
                 required
               />
+              <input
+                type="text"
+                placeholder="Profession"
+                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-[hsl(220_56%_20%)] dark:text-white"
+                required
+              />
               <select
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-[hsl(220_56%_20%)] dark:text-white"
                 required
@@ -226,6 +221,12 @@ export default function CourseDetailsPage() {
                   </option>
                 ))}
               </select>
+              <textarea
+                placeholder="What are you seeking to learn?"
+                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-[hsl(220_56%_20%)] dark:text-white"
+                rows={3}
+                required
+              />
               <button
                 type="submit"
                 className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors"
