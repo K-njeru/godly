@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 import { Calendar, Users, Gift} from 'lucide-react';
 
 const conferenceDetails = {
-  title: "Transforming Faith 2024",
-  date: "September 15-17, 2024",
+  title: "Transforming Faith 2025",
+  date: "March 15-17, 2025",
   theme: "Empowering Believers for Kingdom Impact",
   description: "Join us for three transformative days of spiritual growth, practical wisdom, and powerful networking with fellow believers. Experience dynamic speakers, interactive workshops, and life-changing moments of worship.",
   highlights: [
@@ -60,21 +60,27 @@ export default function ConferenceSection() {
   const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    const targetDate = new Date('2024-09-15T00:00:00');
-    
+    const targetDate = new Date('2025-03-15T00:00:00').getTime();
+
     const updateCountdown = () => {
-      const now = new Date();
-      const difference = targetDate.getTime() - now.getTime();
-      
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-      
-      setCountdown({ days, hours, minutes, seconds });
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        setCountdown({ days, hours, minutes, seconds });
+      } else {
+        setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      }
     };
 
     const timer = setInterval(updateCountdown, 1000);
+    updateCountdown(); // Initial call to avoid delay
+
     return () => clearInterval(timer);
   }, []);
 
