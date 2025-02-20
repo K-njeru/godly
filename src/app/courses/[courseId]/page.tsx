@@ -5,9 +5,9 @@ import { ArrowLeft, Clock, DollarSign, User, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState } from "react";
-
+import { courses } from "@/data/courses";
 // Import the courses data from the main courses page
-import { courses } from "../page";
+
 
 export default function CourseDetailsPage() {
   const { courseId } = useParams();
