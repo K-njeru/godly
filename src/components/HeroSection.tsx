@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import { ChevronLeft, ChevronRight, Calendar, MapPin, BookOpen, Coins, Users, Heart } from "lucide-react"
+import { ChevronLeft, ChevronRight, Calendar, MapPin, BookOpen, HandCoins, Users, PersonStanding } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -11,7 +11,7 @@ const SLIDES = [
     image: "https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=2070",
     title: "Biblical Teaching",
     description: "Discipling believers through Christ-centered teachings, transforming them from new Christians to mature fruit-bearing disciples in God's Kingdom.",
-    cta: "Join Our Classes",
+    cta: "Donate",
     color: "from-purple-600 to-purple-800",
     textColor: "text-purple-600",
     icon: BookOpen,
@@ -19,21 +19,21 @@ const SLIDES = [
     overlayColor: "bg-purple-600/20"
   },
   {
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070",
+    image: "/empower.jpg",
     title: "Economic Empowerment",
     description: "Developing God-given talents and resources within our community to create profitable stewards in God's Kingdom.",
-    cta: "Get Involved",
+    cta: "Donate",
     color: "from-emerald-600 to-emerald-800",
     textColor: "text-emerald-600",
-    icon: Coins,
+    icon: HandCoins,
     lightColor: "bg-emerald-100",
     overlayColor: "bg-emerald-600/20"
   },
   {
-    image: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?q=80&w=2074",
+    image: "/leader.jpg",
     title: "Equipping Ministry Leaders",
     description: "Supporting church workers and pastoral teams in organizational development, administration, and governance.",
-    cta: "Learn More",
+    cta: "Donate",
     color: "from-blue-600 to-blue-800",
     textColor: "text-blue-600",
     icon: Users,
@@ -41,13 +41,13 @@ const SLIDES = [
     overlayColor: "bg-blue-600/20"
   },
   {
-    image: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=2070",
+    image: "/child.jpg",
     title: "Discipleship",
     description: "Partnering with Christ-centered organizations to fulfill the Great Commission through training and equipping disciples.",
-    cta: "Start Your Journey",
+    cta: "Donate",
     color: "from-orange-600 to-orange-800",
     textColor: "text-orange-600",
-    icon: Heart,
+    icon: PersonStanding,
     lightColor: "bg-orange-100",
     overlayColor: "bg-orange-600/20"
   }
@@ -59,7 +59,7 @@ const ConferenceBanner = () => (
       <div className="flex items-center space-x-3">
         <Calendar className="h-4 w-4 text-blue-200" />
         <div>
-          <p className="text-sm font-medium text-blue-100">Annual Leadership Conference 2024</p>
+          <p className="text-sm font-medium text-blue-100">Transforming Faith Conference 2025</p>
         </div>
         <div className="hidden sm:flex items-center space-x-2">
           <MapPin className="h-4 w-4 text-blue-200" />
@@ -67,10 +67,10 @@ const ConferenceBanner = () => (
         </div>
       </div>
       <Link
-        href="#register"
+        href="#Conference"
         className="px-4 py-1 bg-white text-blue-600 rounded-full text-sm font-semibold hover:bg-blue-50 transition-colors"
       >
-        Register Now
+        Learn More
       </Link>
     </div>
   </div>
@@ -162,13 +162,13 @@ export default function Home() {
                   </p>
                   <div className="flex flex-row gap-4">
                     <Link
-                      href="#contact"
+                      href="/Donate"
                       className={`w-[140px] h-[45px] flex items-center justify-center rounded-md bg-gradient-to-r ${SLIDES[currentSlide].color} px-4 py-2 text-sm text-white font-bold hover:opacity-90 transition-opacity`}
                     >
                       {SLIDES[currentSlide].cta}
                     </Link>
                     <Link
-                      href="#About"
+                      href="#Programs"
                       className={`w-[140px] h-[45px] flex items-center justify-center rounded-md border md:${SLIDES[currentSlide].textColor} text-white md:text-current border-current text-sm font-bold hover:bg-gradient-to-r ${SLIDES[currentSlide].color} hover:text-white hover:border-transparent transition-colors`}
                     >
                       Learn More

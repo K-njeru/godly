@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Book, Users, DollarSign, Clock } from "lucide-react";
+import { ArrowUpRight, Book, Users, HandCoins, Clock } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
@@ -19,7 +19,7 @@ const programs = [
   {
     id: "economic-empowerment",
     title: "Economic Empowerment",
-    icon: DollarSign,
+    icon: HandCoins,
     color: "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400",
     description: "Business and financial literacy training programs",
   },
