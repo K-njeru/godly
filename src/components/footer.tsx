@@ -4,6 +4,7 @@ import { BackToTop } from "./back-to-top"
 
 export function Footer() {
   return (
+    <>
     <footer className="relative text-foreground bg-card border-t border-blue-500">
       <div className="relative z-10 container mx-auto px-4 py-12 ">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -114,9 +115,9 @@ export function Footer() {
           <p className="text-sm">© Copyright {new Date().getFullYear()}. ALL RIGHTS RESERVED</p>
         </div>
       </div>
-
-      <BackToTop />
     </footer>
+    <BackToTop />
+    </>
   )
 }
 
