@@ -10,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/footer";
 import { courses } from "@/data/courses";
 import { Suspense } from "react"; // Import Suspense
+import React from "react";
 
 const programs = [
   {
@@ -86,7 +87,7 @@ function CoursesPageContent() {
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Christ, the wisdom of God</h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-100">
-            Disciple believers of Jesus Christ in their faith and knowledge of the truth that leads to godliness
+              Disciple believers of Jesus Christ in their faith and knowledge of the truth that leads to godliness
             </p>
           </motion.div>
           {/* Breadcrumb Navigation */}
@@ -111,15 +112,34 @@ function CoursesPageContent() {
               </p>
             </div>
 
-            {/* Program Selection */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+            {/* Program Selection - Mobile (Icons Only) */}
+            <div className="md:hidden flex justify-center gap-4 mb-8">
+              {programs.map((program) => (
+                <motion.button
+                  key={program.id}
+                  onClick={() => setSelectedProgram(program.id)}
+                  className={`p-3 rounded-full transition-all duration-300 ${selectedProgram === program.id
+                    ? "bg-white dark:bg-[hsl(220_56%_17%)] shadow-lg scale-105 border border-blue-500"
+                    : "bg-gray-100 dark:bg-[hsl(220_56%_13%)] hover:bg-white dark:hover:bg-[hsl(220_56%_17%)]"
+                    }`}
+                  whileHover={{ scale: 1.1 }}
+                >
+                  <div className={`p-2 rounded-full ${program.color}`}>
+                    <program.icon className="w-6 h-6" />
+                  </div>
+                </motion.button>
+              ))}
+            </div>
+
+            {/* Program Selection - Medium and Large Screens */}
+            <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
               {programs.map((program) => (
                 <motion.button
                   key={program.id}
                   onClick={() => setSelectedProgram(program.id)}
                   className={`p-4 rounded-xl transition-all duration-300 ${selectedProgram === program.id
-                      ? "bg-white dark:bg-[hsl(220_56%_17%)] shadow-lg scale-105 border border-blue-500"
-                      : "bg-gray-100 dark:bg-[hsl(220_56%_13%)] hover:bg-white dark:hover:bg-[hsl(220_56%_17%)]"
+                    ? "bg-white dark:bg-[hsl(220_56%_17%)] shadow-lg scale-105 border border-blue-500"
+                    : "bg-gray-100 dark:bg-[hsl(220_56%_13%)] hover:bg-white dark:hover:bg-[hsl(220_56%_17%)]"
                     }`}
                   whileHover={{ scale: selectedProgram === program.id ? 1.05 : 1.02 }}
                 >
@@ -130,8 +150,8 @@ function CoursesPageContent() {
                     <div className="text-left">
                       <h3
                         className={`font-semibold ${selectedProgram === program.id
-                            ? "text-blue-600 dark:text-blue-400"
-                            : "text-gray-900 dark:text-white"
+                          ? "text-blue-600 dark:text-blue-400"
+                          : "text-gray-900 dark:text-white"
                           }`} >
                         {program.title}
                       </h3>
@@ -143,6 +163,31 @@ function CoursesPageContent() {
                 </motion.button>
               ))}
             </div>
+
+   {/* Selected Program Content */}
+<div className="md:hidden mb-12">
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="bg-white dark:bg-[hsl(220_56%_17%)] p-6 rounded-lg shadow-lg"
+  >
+    {/* Program Icon */}
+    {programs.find((p) => p.id === selectedProgram) && (
+      <div className={`p-3 rounded-lg flex flex-row justify-center items-center ${programs.find((p) => p.id === selectedProgram)!.color}`}>
+        {React.createElement(programs.find((p) => p.id === selectedProgram)!.icon, { className: "w-6 h-6 mr-2" })}
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+      {programs.find((p) => p.id === selectedProgram)?.title}
+    </h2>
+      </div>
+    )}
+
+    {/* Program Title and Description */}    
+    <p className="text-gray-600 dark:text-gray-400">
+      {programs.find((p) => p.id === selectedProgram)?.description}
+    </p>
+  </motion.div>
+</div>
 
             {/* Courses Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

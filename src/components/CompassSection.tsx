@@ -7,7 +7,7 @@ import { Handshake, ArrowUpRight, Star, Heart } from 'lucide-react';
 
 const program = [
     {
-        title: "Compass",
+        title: "Compass Financial Ministry",
     },
 ];
 
@@ -126,7 +126,6 @@ const CompassSection = () => {
                                 </Link>
                                 <Link
                                     href={`/courses?program=${encodeURIComponent(program[0].title)}`}
-                                    target="_blank"
                                     className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white rounded-xl hover:bg-blue-400 transition-colors"
                                 >
                                     Explore Courses
