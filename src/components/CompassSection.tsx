@@ -5,6 +5,13 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Handshake, ArrowUpRight, Star, Heart } from 'lucide-react';
 
+const program = [
+    {
+        title: "Compass",
+    },
+];
+
+
 const achievements = [
     {
         number: "5+",
@@ -118,9 +125,8 @@ const CompassSection = () => {
                                     <ArrowUpRight className="w-4 h-4" />
                                 </Link>
                                 <Link
-                                    href="https://compassfinancialministry.org/courses"
+                                    href={`/courses?program=${encodeURIComponent(program[0].title)}`}
                                     target="_blank"
-                                    rel="noopener noreferrer"
                                     className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white rounded-xl hover:bg-blue-400 transition-colors"
                                 >
                                     Explore Courses
