@@ -119,9 +119,9 @@ export default function PartnersPage() {
             <div className="min-h-screen bg-background transition-colors">
                 {/* Hero Section */}
                 <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden" id='Partners-hero'>
-                    <div className="absolute inset-0">
+                    <div className="absolute inset-0 w-full h-full">
                         <Image
-                            src="/partners.jpg?auto=format&fit=crop&q=80"
+                            src="/giving1.jpg?auto=format&fit=crop&q=80"
                             alt="Partners working together"
                             fill
                             className="object-cover brightness-[0.7] dark:brightness-[0.4]"

@@ -70,7 +70,7 @@ function CoursesPageContent() {
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image
-              src="/transform.jpg?auto=format&fit=crop&q=80"
+              src="/courses.jpg?auto=format&fit=crop&q=80"
               alt="Church interior"
               fill
               className="object-cover brightness-[0.7] dark:brightness-[0.4]"
