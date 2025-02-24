@@ -295,17 +295,21 @@ export default function AboutPage() {
                                     transition={{ delay: index * 0.2 }}
                                     className="p-8 bg-gray-50 dark:bg-[hsl(220_56%_13%)] rounded-xl shadow-lg text-center"
                                 >
-                                    <div className="mb-4">{item.icon}</div>
+                                    <div className="mb-4 flex flex-row place-content-between">{item.icon}
+                                    <span className="text-4xl font-bold text-muted-foreground/10">
+                                        {item.year}
+                                    </span>
+                                    </div>
                                     <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                                     <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
-                                    <div className="text-2xl font-bold text-blue-500 mt-4">{item.year}</div>
+
                                 </motion.div>
                             ))}
                         </div>
                     </div>
                 </section>
 
-                
+
                 {/* Call to Action */}
                 <section className="bg-blue-700 mx-[1%] rounded-lg mb-8 py-20 dark:bg-blue-900 text-white">
                     <div className="container mx-auto px-4 text-center">
