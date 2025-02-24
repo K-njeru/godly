@@ -26,7 +26,7 @@ const partnerTypes = [
             "Development of new educational programs",
             "Support for our dedicated staff and educators",
         ],
-        image: "/partners.jpg",
+        image: "/giving1.jpg",
     },
     {
         id: "institutional-partners",
@@ -121,7 +121,7 @@ export default function PartnersPage() {
                 <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden" id='Partners-hero'>
                     <div className="absolute inset-0 w-full h-full">
                         <Image
-                            src="/giving1.jpg?auto=format&fit=crop&q=80"
+                            src="/partner.jpg?auto=format&fit=crop&q=80"
                             alt="Partners working together"
                             fill
                             className="object-cover brightness-[0.7] dark:brightness-[0.4]"
