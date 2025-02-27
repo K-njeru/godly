@@ -44,7 +44,7 @@ const SLIDES = [
     image: "/child.jpg",
     title: "Discipleship",
     description: "Partnering with Christ-centered organizations to fulfill the Great Commission through training and equipping disciples.",
-    cta: "Donate",
+    cta: "",
     color: "from-orange-600 to-orange-800",
     textColor: "text-orange-600",
     icon: PersonStanding,
