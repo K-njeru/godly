@@ -5,17 +5,14 @@ import { ArrowLeft, Clock, DollarSign, User, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState } from "react";
-import { courses } from "@/data/courses";
-
+import { compassCourses } from "@/data/compassResources";
 
 export default function CourseDetailsPage() {
   const { courseId } = useParams();
   const [showEnrollModal, setShowEnrollModal] = useState(false);
 
-  // Find the course in the courses object
-  const course = Object.values(courses)
-    .flat()
-    .find((c) => c.id === courseId);
+  // Find the course in the compassCourses array
+  const course = compassCourses.find((c) => c.id === courseId);
 
   if (!course) {
     return (
@@ -23,7 +20,7 @@ export default function CourseDetailsPage() {
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Course Not Found</h1>
           <Link
-            href="/courses"
+            href="/compass"
             className="text-blue-600 dark:text-blue-400 hover:underline"
           >
             Back to Courses
@@ -38,7 +35,7 @@ export default function CourseDetailsPage() {
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
         {/* Back Button */}
         <Link
-          href="/courses"
+          href="/compass"
           className="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white mb-8"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />

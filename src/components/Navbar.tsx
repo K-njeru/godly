@@ -38,7 +38,7 @@ export default function Navbar() {
   const navItems = [
     { name: "Home", href: "/#Hero" },
     { name: "About", href: "/about" },
-    { name: "Compass", href: "/#Compass" },
+    { name: "Compass", href: "/compass" },
     { name: "Programs", href: "/#Programs" },
     { name: "Conference", href: "/#Conference" },
     { name: "Partners", href: "/#Partners" },

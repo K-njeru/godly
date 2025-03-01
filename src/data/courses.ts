@@ -1,3 +1,4 @@
+// This file contains all the Godly Wisdom Courses/Initiatives
 export const courses = {
   "biblical-teaching": [
     {

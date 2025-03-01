@@ -133,7 +133,7 @@ export default function Home() {
             </div>
 
             {/* Navigation Arrows */}
-            <div className="absolute bottom-8 left-8 flex items-center gap-4">
+            <div className="absolute bottom-4 left-4 flex items-center gap-4">
               <button
                 onClick={() => {
                   previousSlide()
