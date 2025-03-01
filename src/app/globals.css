@@ -14,7 +14,7 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%; /* Soft gray background for better readability */
+    --background: 210 14% 98%; /* Soft gray background for better readability */
     --foreground: 0 0% 3.9%; /* Dark charcoal gray text */
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
@@ -42,7 +42,7 @@ body {
     --teal: 174, 100%, 29%;
   }
   .dark {
-    --background: 0 0% 3.9%;/* bg-gray-900 - Dark gray background */
+    --background: 220 56% 11%;/* bg-gray-900 - Dark gray background */
     --foreground: 0 0% 98%; /* Light gray text */
     --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;

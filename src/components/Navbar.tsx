@@ -9,16 +9,7 @@ import ThemeSwitch from "./ThemeSwitch"
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState<string>("home")
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   useEffect(() => {
     const sections = document.querySelectorAll("section")
@@ -56,10 +47,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-          scrolled ? "bg-card" : "bg-transparent"
-        }`}
-      >
+        className='fixed top-0 left-0 right-0 z-50 transition-colors duration-300 bg-background'>
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
           {/* Logo */}
           <div className="flex items-center">
