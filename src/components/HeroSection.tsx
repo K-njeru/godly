@@ -92,7 +92,7 @@ export default function Home() {
           <div className="hidden md:flex flex-row items-center justify-center gap-12 w-full px-12">
             {PROGRAMS.map((program, index) => (
               <div key={index} className="flex flex-col items-center text-center">
-                <Link href="#Programs" className={`text-2xl font-bold ${program.textColor} mb-4 hover:underline`}>
+                <Link href="#Programs" className={`text-2xl font-bold text-white hover:${program.textColor} mb-4 hover:underline`}>
                   {program.title}
                 </Link>
                 <div className="w-64 h-64 relative">
@@ -116,7 +116,7 @@ export default function Home() {
               >
                 {PROGRAMS.map((program, index) => (
                   <div key={index} className="relative w-full h-full min-w-full flex flex-col items-center justify-start text-center">
-                    <Link href="#Programs" className={`text-2xl font-bold ${program.textColor} mb-4 hover:underline`}>
+                    <Link href="#Programs" className={`text-2xl font-bold text-white hover:text-${program.textColor} mb-4 hover:underline`}>
                       {program.title}
                     </Link>
                     <div className="w-64 h-64 relative">
