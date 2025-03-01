@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react"
 import { ChevronLeft, ChevronRight, BookOpen, HandCoins, Users, PersonStanding } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 const PROGRAMS = [
   {
@@ -74,9 +75,9 @@ export default function Home() {
 
   return (
     <main>
-      <section className="relative w-full min-h-[95vh] bg-gradient-to-r from-blue-600 to-blue-800 overflow-hidden" id="Hero">
+      <section className="relative w-full min-h-[95vh] flex flex-col items-center justify-center bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg overflow-hidden" id="Hero">
         {/* Dynamic Content */}
-        <div className="w-full flex flex-col items-center justify-center text-center pt-24 pb-12">
+        <div className="w-full flex flex-col items-center justify-center text-center pt-36 pb-4">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Godly Wisdom Ministry
           </h1>
@@ -91,7 +92,10 @@ export default function Home() {
           <div className="hidden md:flex flex-row items-center justify-center gap-12 w-full px-12">
             {PROGRAMS.map((program, index) => (
               <div key={index} className="flex flex-col items-center text-center">
-                <div className="w-48 h-48 relative mb-4">
+                <Link href="#Programs" className={`text-2xl font-bold ${program.textColor} mb-4 hover:underline`}>
+                  {program.title}
+                </Link>
+                <div className="w-64 h-64 relative">
                   <Image
                     src={program.image}
                     alt={program.title}
@@ -99,9 +103,6 @@ export default function Home() {
                     className="object-cover rounded-lg"
                   />
                 </div>
-                <h2 className={`text-2xl font-bold ${program.textColor}`}>
-                  {program.title}
-                </h2>
               </div>
             ))}
           </div>
@@ -114,8 +115,11 @@ export default function Home() {
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
                 {PROGRAMS.map((program, index) => (
-                  <div key={index} className="relative w-full h-full min-w-full flex flex-col items-center justify-center text-center">
-                    <div className="w-48 h-48 relative mb-4">
+                  <div key={index} className="relative w-full h-full min-w-full flex flex-col items-center justify-start text-center">
+                    <Link href="#Programs" className={`text-2xl font-bold ${program.textColor} mb-4 hover:underline`}>
+                      {program.title}
+                    </Link>
+                    <div className="w-64 h-64 relative">
                       <Image
                         src={program.image}
                         alt={program.title}
@@ -123,16 +127,13 @@ export default function Home() {
                         className="object-cover rounded-lg"
                       />
                     </div>
-                    <h2 className={`text-2xl font-bold ${program.textColor}`}>
-                      {program.title}
-                    </h2>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Navigation Arrows */}
-            <div className="absolute bottom-8 left-4 right-4 flex items-center justify-between">
+            <div className="absolute bottom-8 left-8 flex items-center gap-4">
               <button
                 onClick={() => {
                   previousSlide()

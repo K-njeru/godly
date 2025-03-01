@@ -1,14 +1,6 @@
 import type { Metadata } from "next";
-import { Urbanist } from "next/font/google";
 import "./globals.css";
-import { Providers } from './providers'
-
-// Configure Urbanist font for regular text
-const urbanist = Urbanist({
-  variable: "--font-urbanist",
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], // All weights Urbanist supports
-});
+import { Providers } from './providers';
 
 // Metadata remains the same
 export const metadata: Metadata = {
@@ -23,9 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${urbanist.variable} antialiased`}>
+      <body className="font-tahoma antialiased">
         <Providers>
-        {children}
+          {children}
         </Providers>
       </body>
     </html>

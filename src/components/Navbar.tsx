@@ -52,9 +52,9 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="-m-1.5 p-1.5">
-              <Image className="h-8 w-auto" src="/globe.svg" alt="Godly wisdom" width={32} height={32} />
+              <Image className="h-full w-full" src="/logo.png" alt="Godly wisdom" width={64} height={64} />
             </Link>
-            <span className="ml-2 text-lg font-bold">Godly wisdom</span>
+            <span className="ml-2 text-lg font-bold"></span>
           </div>
 
           {/* Centered nav items */}
