@@ -52,7 +52,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="-m-1.5 p-1.5">
-              <Image className="h-full w-full" src="/logo.png" alt="Godly wisdom" width={64} height={64} />
+              <Image className="h-full w-auto" src="/logoR.png" alt="Godly wisdom" width={64} height={64} />
             </Link>
             <span className="ml-2 text-lg font-bold"></span>
           </div>

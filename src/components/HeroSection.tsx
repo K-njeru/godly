@@ -18,7 +18,7 @@ const PROGRAMS = [
     overlayColor: "bg-purple-600/20"
   },
   {
-    image: "/empower.jpg",
+    image: "/city.jpg",
     title: "Economic Empowerment",
     description: "Developing God-given talents and resources within our community to create profitable stewards in God's Kingdom.",
     cta: "Donate",
@@ -29,7 +29,7 @@ const PROGRAMS = [
     overlayColor: "bg-emerald-600/20"
   },
   {
-    image: "/leader.jpg",
+    image: "/mleader.jpg",
     title: "Equipping Ministry Leaders",
     description: "Supporting church workers and pastoral teams in organizational development, administration, and governance.",
     cta: "Donate",
@@ -40,7 +40,7 @@ const PROGRAMS = [
     overlayColor: "bg-blue-600/20"
   },
   {
-    image: "/child.jpg",
+    image: "/church.webp",
     title: "Discipleship",
     description: "Partnering with Christ-centered organizations to fulfill the Great Commission through training and equipping disciples.",
     cta: "",
@@ -82,7 +82,7 @@ export default function Home() {
             Godly Wisdom Ministry
           </h1>
           <p className="text-lg md:text-xl text-white mb-8">
-            Growing in faith, talent, and service through Christ-centered education
+            Equipping and discipling believers of Jesus Christ, strengthening their faith and deepening their knowledge of the truth to foster godliness.
           </p>
         </div>
 
