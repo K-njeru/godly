@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowUpRight, Clock, ArrowRight, DollarSign, CheckCircle2 } from "lucide-react"
+import { ArrowUpRight, Clock, ArrowRight, DollarSign} from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
@@ -245,79 +245,6 @@ function CompassPageContent() {
                                 ))}
                             </div>
                         )}
-
-
-                    </div>
-                </section>
-
-                {/* Partnership Section */}
-                <section className="py-16 bg-white dark:bg-[hsl(220_56%_17%)]">
-                    <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5 }}
-                                className="order-2 md:order-1"
-                            >
-                                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Our Partnership</h2>
-
-                                <p className="text-gray-600 dark:text-gray-400 mb-6">
-                                    We&apos;re honored to partner with Compass Financial Ministry in their mission to equip God&apos;s people with
-                                    biblical financial wisdom. Together, we&apos;re committed to transforming lives through biblical financial
-                                    principles.
-                                </p>
-
-                                <div className="space-y-4">
-                                    <div className="flex items-start gap-3">
-                                        <CheckCircle2 className="w-5 h-5 text-green-500 mt-1" />
-                                        <div>
-                                            <h3 className="font-semibold text-gray-900 dark:text-white">5+ Years of Partnership</h3>
-                                            <p className="text-gray-600 dark:text-gray-400 text-sm">
-                                                Working together to transform lives through biblical financial principles
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex items-start gap-3">
-                                        <CheckCircle2 className="w-5 h-5 text-green-500 mt-1" />
-                                        <div>
-                                            <h3 className="font-semibold text-gray-900 dark:text-white">1000+ Lives Impacted</h3>
-                                            <p className="text-gray-600 dark:text-gray-400 text-sm">
-                                                Students equipped with godly financial wisdom and practical skills
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex items-start gap-3">
-                                        <CheckCircle2 className="w-5 h-5 text-green-500 mt-1" />
-                                        <div>
-                                            <h3 className="font-semibold text-gray-900 dark:text-white">100% Alignment in Values</h3>
-                                            <p className="text-gray-600 dark:text-gray-400 text-sm">
-                                                Shared commitment to Christ-centered financial education
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.div>
-
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5 }}
-                                className="order-1 md:order-2"
-                            >
-                                <div className="relative rounded-xl overflow-hidden shadow-xl">
-                                    <Image
-                                        src="/placeholder.svg?height=400&width=600"
-                                        alt="Partnership"
-                                        width={600}
-                                        height={400}
-                                        className="object-cover w-full"
-                                    />
-                                </div>
-                            </motion.div>
-                        </div>
                     </div>
                 </section>
 

@@ -9,7 +9,7 @@ const programs = [
   {
     title: "Biblical Teaching",
     description:
-      "Discipleship in the knowledge and revelation of Jesus Christ, transforming believers from spiritual infancy to maturity.",
+      "Transform from spiritual infancy into a mature disciple bearing abundant fruit in God's Kingdom.",
     spiritualBenefits: [
       { percentage: "95%", benefit: "Report stronger faith foundation" },
       { percentage: "90%", benefit: "Experience deeper biblical understanding" },
@@ -18,6 +18,7 @@ const programs = [
       { percentage: "88%", benefit: "Apply scripture in daily life" },
       { percentage: "85%", benefit: "Engage in effective Bible study" },
     ],
+    color: "from-purple-600 to-purple-800",
   },
   {
     title: "Economic Empowerment",
@@ -31,6 +32,7 @@ const programs = [
       { percentage: "85%", benefit: "Improve financial management skills" },
       { percentage: "80%", benefit: "Start sustainable income-generating activities" },
     ],
+    color: "from-emerald-600 to-emerald-800",
   },
   {
     title: "Equipping Ministry Leaders",
@@ -44,6 +46,7 @@ const programs = [
       { percentage: "88%", benefit: "Improve church administration skills" },
       { percentage: "82%", benefit: "Enhance organizational development" },
     ],
+    color: "from-blue-600 to-blue-800",
   },
   {
     title: "Discipleship",
@@ -57,6 +60,7 @@ const programs = [
       { percentage: "89%", benefit: "Lead others to Christ effectively" },
       { percentage: "84%", benefit: "Mentor new believers" },
     ],
+    color: "from-orange-600 to-orange-800",
   },
 ];
 
@@ -94,29 +98,27 @@ export default function ProgramsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`
-                  relative flex flex-col min-h-[200px] md:min-h-[280px] p-6 rounded-lg shadow-md transition-all
-                  bg-white dark:bg-[hsl(220_56%_17%)]
-                  md:hover:bg-blue-50 md:dark:hover:bg-[hsl(220_56%_20%)]
-                  ${activeProgram === index ? 'md:bg-blue-50 md:dark:bg-[hsl(220_56%_20%)]' : ''}
-                  ${activeProgram === index ? 'md:border-2 md:border-blue-500 md:scale-105' : 'border border-transparent'}
-                  md:cursor-pointer
-                `}
+    relative flex flex-col min-h-[200px] md:min-h-[280px] p-6 rounded-lg transition-all
+    bg-gradient-to-b ${program.color}
+    ${activeProgram === index ? 'md:scale-105 transition-transform duration-300 md:shadow-xl md:border-2 md:border-foreground' : 'md:scale-100 md:shadow-md'}
+    hover:brightness-90 md:cursor-pointer
+  `}
                 onClick={() => setActiveProgram(index)}
               >
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{program.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">{program.description}</p>
+                  <h3 className="text-xl font-bold text-white mb-2">{program.title}</h3>
+                  <p className="text-gray-200 dark:text-gray-100 mb-4">{program.description}</p>
                 </div>
 
                 <div className="mt-auto pb-2">
                   <Link
                     href={`/courses?program=${encodeURIComponent(program.title)}`}
-                    className="text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
+                    className="text-white hover:text-gray-200 flex items-center gap-1"
                   >
                     Explore Courses <ArrowUpRight className="w-4 h-4" />
                   </Link>
                   <button
-                    className="md:hidden mt-4 w-full flex items-center justify-center gap-2 text-blue-600 dark:text-blue-400"
+                    className="md:hidden mt-4 w-full flex items-center justify-center gap-2 text-white hover:text-gray-200"
                     onClick={(e) => toggleBenefits(index, e)}
                   >
                     {showBenefitsMobile === index ? "Hide Impacts" : "View Impacts"}

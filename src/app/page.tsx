@@ -17,8 +17,8 @@ export default function Page() {
       <Navbar />
       <HeroSection />
       <AboutSection />
-      <CompassSection />
       <ProgramsSection />
+      <CompassSection />
       <Banner />
       <PartnersSection />
       <ConferenceSection />
