@@ -40,7 +40,7 @@ export default function Navbar() {
     { name: "About", href: "/about" },
     { name: "Compass", href: "/compass" },
     { name: "Programs", href: "/#Programs" },
-    { name: "Conference", href: "/#Conference" },
+    { name: "Conference", href: "/conference" },
     { name: "Partners", href: "/#Partners" },
   ]
 

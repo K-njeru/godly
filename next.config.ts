@@ -3,7 +3,14 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    domains: ['images.unsplash.com', 'compassfinancialministry.org',], // Add the domain here
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "", // optional
+        pathname: "/**", // optional, allows all paths
+      },
+    ],
   },
 };
 

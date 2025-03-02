@@ -97,12 +97,10 @@ export default function ProgramsSection() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`
-    relative flex flex-col min-h-[200px] md:min-h-[280px] p-6 rounded-lg transition-all
-    bg-gradient-to-b ${program.color}
-    ${activeProgram === index ? 'md:scale-105 transition-transform duration-300 md:shadow-xl md:border-2 md:border-foreground' : 'md:scale-100 md:shadow-md'}
-    hover:brightness-90 md:cursor-pointer
-  `}
+                className={`relative flex flex-col min-h-[200px] md:min-h-[280px] p-6 rounded-lg transition-all bg-gradient-to-b ${program.color} ${activeProgram === index
+                    ? `md:rounded-xl md:border-2 md:border-t-4 md:border-foreground md:scale-105 transition-transform duration-300 md:shadow-xl`
+                    : 'md:scale-100 md:shadow-md'
+                  } hover:brightness-90 md:cursor-pointer`}
                 onClick={() => setActiveProgram(index)}
               >
                 <div>
