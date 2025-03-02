@@ -11,7 +11,7 @@ import {
   Building2,
   TreePine,
   Camera,
-  
+
 } from "lucide-react"
 import Image from "next/image"
 import Navbar from "@/components/Navbar"
@@ -266,19 +266,25 @@ export default function ConferencePage() {
         {/* Host Message Section */}
         <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4 max-w-6xl">
+            <div className="text-center mb-12">
+              <Badge className="mb-4">Welcome Message</Badge>
+              <h2 className="text-3xl font-bold mb-6">A Message from Your Conference Host</h2>
+            </div>
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
+              <div className="w-full h-72 overflow-hidden rounded-lg shadow-xl relative group">
                 <Image
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a"
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
                   alt="Conference Host"
-                  width={500}
-                  height={600}
-                  className="rounded-lg shadow-xl"
+                  width={800}
+                  height={450}
+                  className="object-cover object-center w-full h-full transition-transform duration-300 group-hover:scale-105"
                 />
+                {/* Host Overlay */}
+                <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-white text-lg font-semibold">Conference Host</p>
+                </div>
               </div>
               <div>
-                <Badge className="mb-4">Welcome Message</Badge>
-                <h2 className="text-3xl font-bold mb-6">A Message from Your Conference Host</h2>
                 <p className="text-gray-600 mb-6">
                   This year, we are excited to bring together believers from across East Africa for three transformative
                   days of learning, fellowship, and spiritual growth. Our focus will be on experiencing biblical
@@ -289,16 +295,9 @@ export default function ConferencePage() {
                   biblical financial principles, helping you become a better steward of God&apos;s resources.
                 </p>
                 <div className="flex items-center gap-4">
-                  <Image
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a"
-                    alt="Host Signature"
-                    width={50}
-                    height={50}
-                    className="rounded-full"
-                  />
                   <div>
                     <p className="font-semibold">John Kariuki</p>
-                    <p className="text-sm text-gray-600">Conference Director</p>
+                    <p className="text-sm text-gray-600">Conference Host</p>
                   </div>
                 </div>
               </div>
