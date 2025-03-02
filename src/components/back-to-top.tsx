@@ -31,7 +31,7 @@ export function BackToTop() {
       onClick={scrollToTop}
       className={`${
         isVisible ? 'opacity-100' : 'opacity-0'
-      } fixed bottom-4 right-4 rounded-full bg-blue-500 dark:bg-blue-900 text-white p-3 shadow-lg transition-opacity z-20 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-900 focus:ring-offset-2`}
+      } fixed bottom-4 right-4 rounded-full bg-blue-700 text-white p-3 shadow-lg transition-opacity z-20 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-900 focus:ring-offset-2`}
       aria-label="Back to top"
     >
       <ChevronsUp className="h-6 w-6" />

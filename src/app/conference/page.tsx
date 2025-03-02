@@ -11,8 +11,7 @@ import {
   Building2,
   TreePine,
   Camera,
-  Handshake,
-  CheckCircle2,
+  
 } from "lucide-react"
 import Image from "next/image"
 import Navbar from "@/components/Navbar"
@@ -197,7 +196,7 @@ const tourismSpots = [
   },
 ]
 
-const partnershipLevels = [
+/* const partnershipLevels = [
   {
     level: "Gold Partner",
     benefits: ["Premium exhibition space", "5 conference passes", "Logo on all materials", "Speaking opportunity"],
@@ -210,7 +209,7 @@ const partnershipLevels = [
     level: "Bronze Partner",
     benefits: ["Small exhibition space", "2 conference passes", "Logo on website"],
   },
-]
+] */
 
 export default function ConferencePage() {
   const [activeTrack, setActiveTrack] = useState(tracks[0].id); // Set the first track as active on load
@@ -226,7 +225,7 @@ export default function ConferencePage() {
       <Navbar />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative h-screen max-h-[600px] flex items-center justify-center overflow-hidden">
+        <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
             <Image
               src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
@@ -380,7 +379,7 @@ export default function ConferencePage() {
 
 
         {/* Sessions Section */}
-        <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+        <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-6">
@@ -568,7 +567,7 @@ export default function ConferencePage() {
           </div>
         </section>
 
-        {/* Partnership Section */}
+        {/* Partnership Section 
         <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-12">
@@ -614,6 +613,7 @@ export default function ConferencePage() {
             </div>
           </div>
         </section>
+          */}
 
         {/* Tourism Section */}
         <section className="py-16 md:py-24 bg-background">
