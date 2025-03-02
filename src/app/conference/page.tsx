@@ -23,70 +23,70 @@ import { useState } from "react"
 import Link from "next/link"
 
 const tracks = [
-    {
-      id: 'track-1',
-      title: 'Track A: Learn',
-      letter: 'A',
-      icon: '⏳', // Use an icon (e.g., hourglass) instead of an alphabet
-      description: 'Maximize those short free moments during the day to learn and share God\'s word on finances.',
-      sessions: [
-        {
-          title: 'Session 1: Learn About Finances God\'s Way',
-          speakers: ['Donald Wray', 'Jennifer Winborn'],
-        },
-        {
-          title: 'Session 2: Building a Strong Financial Foundation',
-          speakers: ['John Doe', 'Jane Smith'],
-        },
-        {
-          title: 'Session 3: Practical Steps to Financial Freedom',
-          speakers: ['Alice Johnson', 'Bob Brown'],
-        },
-      ],
-    },
-    {
-      id: 'track-2',
-      title: 'Track B: Apply',
-      letter: 'B',
-      icon: '🌱', // Use an icon (e.g., sprout) instead of an alphabet
-      description: 'Grow in your relationship with the Lord and with others as you dig deeper into our financial discipleship materials.',
-      sessions: [
-        {
-          title: 'Session 1: Applying Biblical Principles to Your Finances',
-          speakers: ['Rhea Fix', 'Ivy Mawuko'],
-        },
-        {
-          title: 'Session 2: Staying Focused on Your Financial Goals',
-          speakers: ['Michael Green', 'Sarah Lee'],
-        },
-        {
-          title: 'Session 3: Overcoming Financial Challenges',
-          speakers: ['David Clark', 'Emily White'],
-        },
-      ],
-    },
-    {
-      id: 'track-3',
-      title: 'Track C: Multiply',
-      letter: 'C',
-      icon: '🚶‍♂️', // Use an icon (e.g., walking person) instead of an alphabet
-      description: 'Do you feel called to use your experience, gifts, and passion to help others on a larger scale? See what opportunities there are to impact your church, community, city, and more through serving with us.',
-      sessions: [
-        {
-          title: 'Session 1: Multiplying Your Impact in Your Community',
-          speakers: ['Gary Montgomery', 'Kirk Bennett'],
-        },
-        {
-          title: 'Session 2: Leading Financial Discipleship Programs',
-          speakers: ['Patrick Sassou', 'Laura Taylor'],
-        },
-        {
-          title: 'Session 3: Expanding Your Reach Beyond Your City',
-          speakers: ['Chris Evans', 'Olivia Brown'],
-        },
-      ],
-    },
-  ];
+  {
+    id: 'track-1',
+    title: 'Track A: Learn',
+    letter: 'A',
+    icon: '⏳', // Use an icon (e.g., hourglass) instead of an alphabet
+    description: 'Maximize those short free moments during the day to learn and share God\'s word on finances.',
+    sessions: [
+      {
+        title: 'Session 1: Learn About Finances God\'s Way',
+        speakers: ['Donald Wray', 'Jennifer Winborn'],
+      },
+      {
+        title: 'Session 2: Building a Strong Financial Foundation',
+        speakers: ['John Doe', 'Jane Smith'],
+      },
+      {
+        title: 'Session 3: Practical Steps to Financial Freedom',
+        speakers: ['Alice Johnson', 'Bob Brown'],
+      },
+    ],
+  },
+  {
+    id: 'track-2',
+    title: 'Track B: Apply',
+    letter: 'B',
+    icon: '🌱', // Use an icon (e.g., sprout) instead of an alphabet
+    description: 'Grow in your relationship with the Lord and with others as you dig deeper into our financial discipleship materials.',
+    sessions: [
+      {
+        title: 'Session 1: Applying Biblical Principles to Your Finances',
+        speakers: ['Rhea Fix', 'Ivy Mawuko'],
+      },
+      {
+        title: 'Session 2: Staying Focused on Your Financial Goals',
+        speakers: ['Michael Green', 'Sarah Lee'],
+      },
+      {
+        title: 'Session 3: Overcoming Financial Challenges',
+        speakers: ['David Clark', 'Emily White'],
+      },
+    ],
+  },
+  {
+    id: 'track-3',
+    title: 'Track C: Multiply',
+    letter: 'C',
+    icon: '🚶‍♂️', // Use an icon (e.g., walking person) instead of an alphabet
+    description: 'Do you feel called to use your experience, gifts, and passion to help others on a larger scale? See what opportunities there are to impact your church, community, city, and more through serving with us.',
+    sessions: [
+      {
+        title: 'Session 1: Multiplying Your Impact in Your Community',
+        speakers: ['Gary Montgomery', 'Kirk Bennett'],
+      },
+      {
+        title: 'Session 2: Leading Financial Discipleship Programs',
+        speakers: ['Patrick Sassou', 'Laura Taylor'],
+      },
+      {
+        title: 'Session 3: Expanding Your Reach Beyond Your City',
+        speakers: ['Chris Evans', 'Olivia Brown'],
+      },
+    ],
+  },
+];
 
 const speakers = [
   {
@@ -308,12 +308,12 @@ export default function ConferencePage() {
         </section>
 
         {/* Speakers Section */}
-        <section className="py-16 md:py-24 bg-gray-50">
+        <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-12">
               <Badge className="mb-4">Featured Speakers</Badge>
               <h2 className="text-3xl font-bold mb-4">Learn from the Experts</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+              <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 Join our distinguished speakers as they share biblical wisdom and practical insights for financial
                 stewardship.
               </p>
@@ -326,14 +326,14 @@ export default function ConferencePage() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white rounded-lg shadow-lg overflow-hidden"
+                  className="bg-card rounded-lg shadow-lg overflow-hidden"
                 >
                   <div className="relative h-64">
                     <Image src={speaker.image || "/placeholder.svg"} alt={speaker.name} fill className="object-cover" />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2">{speaker.name}</h3>
-                    <p className="text-gray-600 mb-4">{speaker.role}</p>
+                    <h3 className="text-foreground text-xl font-bold mb-2">{speaker.name}</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">{speaker.role}</p>
                     <p className="text-sm text-gray-500">Speaking on: {speaker.topic}</p>
                   </div>
                 </motion.div>
@@ -343,7 +343,7 @@ export default function ConferencePage() {
         </section>
 
         {/* Schedule Section */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-12">
               <Badge className="mb-4">Conference Schedule</Badge>
@@ -360,7 +360,7 @@ export default function ConferencePage() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-gray-50 rounded-lg p-6"
+                  className="bg-card rounded-lg p-6"
                 >
                   <h3 className="text-xl font-bold mb-2">{day.day}</h3>
                   <p className="text-gray-600 mb-4">{day.date}</p>
@@ -377,69 +377,69 @@ export default function ConferencePage() {
             </div>
           </div>
         </section>
- 
-  
 
+
+        {/* Sessions Section */}
         <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-6">
-            Discover Easy Ways to Share Compass with Others
-          </h2>
-        </div>
-
-        {/* Tracks Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {tracks.map((track) => (
-            <div
-              key={track.id}
-              className="text-center cursor-pointer flex items-center flex-row p-4 rounded-lg bg-blue-50 dark:bg-blue-900/20"
-              onClick={() => setActiveTrack(track.id)}
-            >
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-4 mb-4">
-                <span className="text-white text-2xl">{track.icon}</span> {/* Use the icon here */}
-              </div>
-              <h3 className="text-xl font-bold mb-2">{track.title}</h3>
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-6">
+                Discover Easy Ways to Share Compass with Others
+              </h2>
             </div>
-          ))}
-        </div>
 
-        {/* Track Content */}
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-          {tracks.map((track) => (
-            <div key={track.id} className={`${activeTrack === track.id ? 'block' : 'hidden'}`}>
-              <div className="flex">
-                {/* Blue Left Banner */}
-                <div className="w-16 bg-blue-600 flex items-center justify-center">
-                  <span className="text-white text-4xl font-bold transform origin-center">
-                    {track.letter}
-                  </span>
+            {/* Tracks Grid */}
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              {tracks.map((track) => (
+                <div
+                  key={track.id}
+                  className="text-center cursor-pointer flex items-center flex-row p-4 rounded-lg bg-card"
+                  onClick={() => setActiveTrack(track.id)}
+                >
+                  <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-4 mb-4">
+                    <span className="text-white text-2xl">{track.icon}</span> {/* Use the icon here */}
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">{track.title}</h3>
                 </div>
+              ))}
+            </div>
 
-                {/* Track Content */}
-                <div className="flex-1 px-8 py-6 border-t border-gray-200 dark:border-gray-700">
-                  {/* Track Description */}
-                  <p className="text-gray-600 dark:text-gray-400 mb-6">{track.description}</p>
+            {/* Track Content */}
+            <div className="bg-card rounded-xl shadow-lg overflow-hidden">
+              {tracks.map((track) => (
+                <div key={track.id} className={`${activeTrack === track.id ? 'block' : 'hidden'}`}>
+                  <div className="flex">
+                    {/* Blue Left Banner */}
+                    <div className="w-16 bg-blue-600 flex items-center justify-center">
+                      <span className="text-white text-4xl font-bold transform origin-center">
+                        {track.letter}
+                      </span>
+                    </div>
 
-                  {/* Sessions */}
-                  <div className="space-y-8">
-                    {track.sessions.map((session, index) => (
-                      <div key={index}>
-                        <h4 className="text-xl font-bold mb-2">{session.title}</h4>
-                        <p className="text-gray-600 dark:text-gray-400 italic">
-                          Speakers: {session.speakers.join(', ')}
-                        </p>
+                    {/* Track Content */}
+                    <div className="flex-1 px-8 py-6 border-t border-gray-200 dark:border-gray-700">
+                      {/* Track Description */}
+                      <p className="text-gray-600 dark:text-gray-400 mb-6">{track.description}</p>
+
+                      {/* Sessions */}
+                      <div className="space-y-8">
+                        {track.sessions.map((session, index) => (
+                          <div key={index}>
+                            <h4 className="text-xl font-bold mb-2">{session.title}</h4>
+                            <p className="text-gray-600 dark:text-gray-400 italic">
+                              Speakers: {session.speakers.join(', ')}
+                            </p>
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
- 
+          </div>
+        </section>
+
 
         {/* Registration Section */}
         <section className="py-16 md:py-24 bg-blue-600 dark:bg-blue-800 text-white">
@@ -473,7 +473,7 @@ export default function ConferencePage() {
               </div>
 
               {/* Ticket Calculator */}
-              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 text-gray-900 dark:text-white">
+              <div className="bg-background rounded-xl p-6 text-gray-900 dark:text-white">
                 <h3 className="text-2xl font-bold mb-6">Calculate Your Registration</h3>
 
                 <div className="space-y-6">
@@ -529,7 +529,7 @@ export default function ConferencePage() {
         </section>
 
         {/* Venue Section */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
@@ -616,7 +616,7 @@ export default function ConferencePage() {
         </section>
 
         {/* Tourism Section */}
-        <section className="py-16 md:py-24 bg-white dark:bg-gray-800">
+        <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-12">
               <Badge className="mb-4">Explore Kenya</Badge>
