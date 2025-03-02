@@ -226,7 +226,7 @@ export default function ConferencePage() {
       <Navbar />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <section className="relative h-screen max-h-[600px] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
             <Image
               src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
@@ -237,7 +237,7 @@ export default function ConferencePage() {
             />
           </div>
 
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+          <div className="absolute inset-0 " />
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -261,14 +261,11 @@ export default function ConferencePage() {
                 <span>Pan Afric Hotel, Nairobi</span>
               </div>
             </div>
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-              Register Now
-            </Button>
           </motion.div>
         </section>
 
         {/* Host Message Section */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
