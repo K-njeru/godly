@@ -286,7 +286,7 @@ export default function ConferencePage() {
               </div>
               <div>
                 <p className="text-gray-600 mb-6">
-                   we are excited to bring together believers from across East Africa for three transformative
+                  This year, we are excited to bring together believers from across East Africa for three transformative
                   days of learning, fellowship, and spiritual growth. Our focus will be on experiencing biblical
                   contentment and financial wisdom in today&apos;s challenging economic environment.
                 </p>
