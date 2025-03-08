@@ -15,7 +15,7 @@ export function Footer() {
                 <div className="h-full w-[10%] bg-blue-500" />
               </div>
               <p className="text-sm leading-relaxed">
-                Godly Wisdom Ministry is a Christian discipleship organization based in Nairobi, dedicated to nurturing believers in faith and fruitfulness since 2013. Inspired by Paul Washer’s words, we strive to embody true discipleship—marked by humility, righteousness, mercy, purity, and perseverance.
+                 is a Christian discipleship organization based in Nairobi, dedicated to nurturing believers in faith and fruitfulness since 2013. Inspired by Paul Washer’s words, we strive to embody true discipleship—marked by humility, righteousness, mercy, purity, and perseverance.
               </p>
             </div>
 
